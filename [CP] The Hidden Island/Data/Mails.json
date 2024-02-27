@@ -1,0 +1,14 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "LogName": "Hidden Island Invitation Mail (with Totem Recipe)",
+            "Action": "EditData",
+            "Target": "Data/Mail",
+            "Entries": {
+                "{{ModId}}_HiddenIsland_Invitation": "{{i18n:mail.WnS.HiddenIsland_Invitation}}",
+                "{{ModId}}_HiddenIsland_EarlyInvitation": "{{i18n:mail.WnS.HiddenIsland_EarlyInvitation}}"
+            }
+        }
+    ]
+}

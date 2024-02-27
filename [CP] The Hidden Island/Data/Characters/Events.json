@@ -1,0 +1,38 @@
+{
+	"$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            // Example death event
+            "LogName": "Death Event At Island Default",
+            "Action": "EditData",
+            "Target": "Data/Events/{{ModId}}_House",
+            "Entries": {
+                "PlayerKilled": "{{i18n:location.event.WnSHouse_PlayerKilled |PlayerName={{PlayerName}}}}"
+            }
+        },
+        {
+            // When you interact with the statue, it can warp you home
+            "LogName": "Teleport Default Event",
+            "Action": "EditData",
+            "Target": "Data/Events/{{ModId}}_HiddenIsland", //action AddItem (O)24/pause 500/
+            "Entries": {
+                "{{ModId}}_Event_TeleportBackHomeFromHiddenIslandThroughStatue/GameStateQuery false": "none/
+                17 22/
+                farmer 17 23 0/
+                skippable/
+                question fork1 \"The power of this statue will bring you home.#Stay here.#Go home.\"/
+                fork {{ModId}}_Event_TeleportBackHomeFromHiddenIslandThroughStatue_GoHome/
+                end",
+                "{{ModId}}_Event_TeleportBackHomeFromHiddenIslandThroughStatue_GoHome": "
+                faceDirection farmer 2/
+                animate farmer false true 2000 57/
+                totemWarpEffect 17 23 255,255,255 \"Mods/{{ModId}}/Objects\" 80,0,16,16/
+                pause 2000/warp farmer 999 999/
+                globalFade 0.007 true/
+                changeLocation farmHouse/
+                faceDirection farmer 2/
+                end warpOut"
+            }
+        }
+    ]
+}

@@ -1,0 +1,457 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Format": "2.0.0",
+    "ConfigSchema": {
+        "Difficulty": {
+            "AllowValues": "normal, insane",
+            "Default": "normal",
+            "Section": "StorySettings"
+        },
+        "FlirtyWinnie": {
+            "AllowValues": "on, off",
+            "Default": "on",
+            "Section": "WinnieSettings"
+        },
+    },
+    "DynamicTokens": [
+        {
+            "Name": "WeekDayList",
+            "Value": "Sun, Mon, Tue, Wed, Thu, Fri, Sat"
+        },
+        {
+            "Name": "WeekDay",
+            "Value": "{{WeekDayList |valueAt={{Query: {{Day}}%7}}}}"
+        },
+        {
+            "Name": "DifficultyNormalCheck",
+            "Value": "false",
+        },
+        {
+            "Name": "DifficultyNormalCheck",
+            "Value": "true",
+            "When": {
+                "Difficulty": "normal"
+            }
+        },
+        {
+            "Name": "WnSWinnieRandomizeLovedGift",
+            "Value": "{{Random: 84, 114, 138, 346}}"
+        },
+        {
+            "Name": "WnSWinnieSeason",
+            "Value": ""
+        },
+        {
+            "Name": "WnSWinnieSeason",
+            "Value": "Spring",
+            "When": {
+                "Season": "Spring"
+            }
+        },
+        {
+            "Name": "WnSWinnieSeason",
+            "Value": "Summer",
+            "When": {
+                "Season": "Summer"
+            }
+        },
+        {
+            "Name": "WnSWinnieSeason",
+            "Value": "Fall",
+            "When": {
+                "Season": "Fall"
+            }
+        },
+        {
+            "Name": "WnSWinnieSeason",
+            "Value": "Winter",
+            "When": {
+                "Season": "Winter"
+            }
+        },
+        {
+            "Name": "WnSWinnieRelationship",
+            "Value": ""
+        },
+        {
+            "Name": "WnSWinnieRelationship",
+            "Value": ".Neutral",
+            "When": {
+                "Hearts:WnS.Winnie": "{{Range: 0, 3}}"
+            }
+        },
+        {
+            "Name": "WnSWinnieRelationship",
+            "Value": ".Friendly",
+            "When": {
+                "Hearts:WnS.Winnie": "{{Range: 4, 14}}"
+            }
+        },
+        {
+            "Name": "WnSWinnieRelationship",
+            "Value": ".Crush",
+            "When": {
+                "Hearts:WnS.Winnie": "{{Range: 8, 14}}", // romantic
+                "FlirtyWinnie": "on"
+            }
+        },
+        {
+            "Name": "WnSWinnieRelationship",
+            "Value": ".Bestie",
+            "When": {
+                "Hearts:WnS.Winnie": "{{Range: 8, 14}}", // platonic
+                "FlirtyWinnie": "off"
+            }
+        },
+        {
+            "Name": "WnSWinnieRelationship",
+            "Value": ".Dating",
+            "When": {
+                "Hearts:WnS.Winnie": "{{Range: 6, 14}}",
+                "Relationship:WnS.Winnie |contains=Dating, Engaged": true,
+                "FlirtyWinnie": "on"
+            }
+        },
+        {
+            "Name": "WnSWinnieRelationship",
+            "Value": ".Soulmate",
+            "When": {
+                "Hearts:WnS.Winnie": "{{Range: 6, 14}}",
+                "Relationship:WnS.Winnie |contains=Dating, Engaged": true,
+                "FlirtyWinnie": "off"
+            }
+        },
+        {
+            "Name": "WnSWinnieRelationship",
+            "Value": ".Unhealthy",
+            "When": {
+                "Hearts:WnS.Winnie": "{{Range: 0, 5}}",
+                "Relationship:WnS.Winnie |contains=Dating, Engaged": true,
+                "Difficulty": "insane",
+                "FlirtyWinnie": "on"
+            }
+        },
+        {
+            "Name": "WnSWinnieRelationship",
+            "Value": ".Married",
+            "When": {
+                "Relationship:WnS.Winnie |contains=Married": true,
+                "FlirtyWinnie": "on"
+            }
+        },
+        {
+            "Name": "WnSWinnieRelationship",
+            "Value": ".Roommate",
+            "When": {
+                "Relationship:WnS.Winnie |contains=Roommate": true,
+                "FlirtyWinnie": "off"
+            }
+        },
+        {
+            "Name": "WnSWinnieRelationship",
+            "Value": ".Toxic",
+            "When": {
+                "Hearts:WnS.Winnie": "{{Range: 0, 5}}",
+                "Relationship:WnS.Winnie |contains=Married": true,
+                "Difficulty": "insane",
+                "FlirtyWinnie": "on"
+            }
+        },
+        {
+            "Name": "WnSWinnieRelationship",
+            "Value": ".Ex",
+            "When": {
+                // Prevent the player to get friendly Winnie's dialogues after break up
+                "HasFlag |contains=WnSWinnieBreakUpAttempt": true,
+                "Difficulty": "insane",
+                "FlirtyWinnie": "on"
+            }
+        },
+        {
+            "Name": "WnSWinnieRelationship",
+            "Value": ".Divorced",
+            "When": {
+                "Relationship:WnS.Winnie |contains=Divorced": true,
+                "FlirtyWinnie": "on"
+            }
+        },
+        {
+            "Name": "WnSWinnieRelationship",
+            "Value": ".Divorced",
+            "When": {
+                "HasFlag |contains=WnSWinnieDivorceAttempt": true,
+                "FlirtyWinnie": "on"
+            }
+        },
+        {
+            "Name": "WnSWinnieRelationship",
+            "Value": ".Divorced",
+            "When": {
+                // Prevent the player to try resetting Winnie divorced relationship with Dark Shrine of Memory
+                "HasFlag |contains=WnSWinnieWipedMemoryAttempt": true,
+                "Difficulty": "insane",
+                "FlirtyWinnie": "on"
+            }
+        },
+        {
+            "Name": "WnSWinnieAngry",
+            "Value": "",
+        },
+        {
+            "Name": "WnSWinnieAngry",
+            "Value": ".Angry",
+            "When": {
+                "Difficulty": "insane"
+            }
+        },
+        {
+            "Name": "WnSWinnieFlirty",
+            "Value": "",
+        },
+        {
+            "Name": "WnSWinnieFlirty",
+            "Value": ".Flirty",
+            "When": {
+                "FlirtyWinnie": "on"
+            }
+        },
+        {
+            "Name": "WnS.Winnie.Dialogue.Neutral",
+            "Value": "{{i18n:dialogue.daily.WnS.Winnie.Neutral.{{Random: {{Range: 1, 15}}}}}}",
+        },
+        {
+            // change to new dialogue everyday
+            "Name": "WnS.Winnie.Dialogue.Neutral",
+            "Value": "WnSWinnieNeutralTalkedToday}{{i18n:dialogue.daily.WnS.Winnie.Neutral.{{poohnhi.PoohCore/GetMailFlagProgressNumber:WnSWinnieNeutralTalkedToday}}}}",
+            "When": {
+                "HasMod": "poohnhi.PoohCore",
+                "Query: {{poohnhi.PoohCore/GetMailFlagProgressNumber:WnSWinnieNeutralTalkedToday}} <= 15": true 
+                // if out of new dialogues, return to randomize
+            }
+        },
+        {
+            "Name": "WnS.Winnie.Dialogue.Friendly",
+            "Value": "{{i18n:dialogue.daily.WnS.Winnie.Friendly.{{Random: {{Range: 1, 30}}}}}}",
+        },
+        {
+            // change to new dialogue everyday
+            "Name": "WnS.Winnie.Dialogue.Friendly",
+            "Value": "WnSWinnieFriendlyTalkedToday}{{i18n:dialogue.daily.WnS.Winnie.Friendly.{{poohnhi.PoohCore/GetMailFlagProgressNumber:WnSWinnieFriendlyTalkedToday}}}}",
+            "When": {
+                "HasMod": "poohnhi.PoohCore",
+                "Query: {{poohnhi.PoohCore/GetMailFlagProgressNumber:WnSWinnieFriendlyTalkedToday}} <= 30": true 
+                // if out of new dialogues, return to randomize
+            }
+        },
+        {
+            "Name": "WnS.Winnie.Dialogue",
+            "Value": "{{i18n:dialogue.daily.WnS.Winnie.{{DayOfWeek}}}}"
+        },
+        {
+            "Name": "WnS.Winnie.Dialogue",
+            "Value": "{{WnS.Winnie.Dialogue.Neutral}}",
+            "When": {
+                "WnSWinnieRelationship": ".Neutral"
+            }
+        },
+        {
+            "Name": "WnS.Winnie.Dialogue",
+            "Value": "{{WnS.Winnie.Dialogue.Friendly}}",
+            "When": {
+                "WnSWinnieRelationship": ".Friendly"
+            }
+        },
+        {
+            "Name": "WnS.Winnie.Dialogue",
+            "Value": "{{i18n:dialogue.daily.WnS.Winnie.{{WnSWinnieSeason}}.{{Random: {{Range: 1, 5}}}}|default={{i18n:dialogue.daily.WnS.Winnie.{{WnSWinnieSeason}}.1|default={{i18n:dialogue.daily.WnS.Winnie.{{DayOfWeek}}}}}}}}",
+            "When": {
+                "Query: {{Random: {{Range: 0, 100}}}} <= 5": true // 5% rate of using seasonal dialogue, 95% of using normal dialogue
+            }
+        },
+        {
+            "Name": "CGD.WnS.Winnie.LikedAppreciate",
+            "Value": "#$b#{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.{{Random: \"\", {{Range:1, 6}}}} |default={{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate}}}}$11"
+        },
+        {
+            "Name": "CGD.WnS.Winnie.LovedAppreciate",
+            "Value": "#$b#{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.{{Random: \"\", {{Range:1, 6}}}} |default={{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate}}}}$11"
+        },
+        {
+            "Name": "CGD.WnS.Winnie.LovedAppreciate",
+            "Value": "#$b#{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Loved_Appreciate.{{Random: \"\", {{Range:1, 8}}}} |default={{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Loved_Appreciate}}}}$11",
+            "When": {
+                "Query: {{Random: 1, 10}} > 3": true // 70% rate of using loved appreciate as thank you, 30% of liked appreciate
+            }
+        },
+        {
+            "Name": "WnSWinnieMorningBreakfastChoice",
+            "Value": "(O){{Random: 194, 195, 201, 210, 211}}"
+        },
+        {
+            "Name": "WnSWinnieMorningCoffeeChoice",
+            "Value": "(O){{Random: 253, 395}}"
+        },
+        {
+            "Name": "WnSWinnieMorningCoffee",
+            "Value": "{{i18n:schedule.string.WnS.Winnie.MorningCoffee.Greetings.{{Random:{{Range:1, 5}}}}}}{{i18n:schedule.string.WnS.Winnie.MorningCoffee.Ask}}#$r WnSWFCYes 10 WnSWFC_yes#{{i18n:schedule.string.WnS.Winnie.MorningCoffee.Yes}}#$r WnSWFCNo 0 WnSWFC_no#{{i18n:schedule.string.WnS.Winnie.MorningCoffee.No}}"
+        },
+        {
+            "Name": "WnSWinnieScheduleStartTime",
+            "Value": "{{Random: 630, 640, 650, 700, 710, 720, 730, 740, 750, 800, 810, 820, 830, 840, 850, 900, 910, 920, 930, 940, 950, 1000, 1010, 1020, 1030, 1040, 1050, 1100, 1110, 1120, 1130, 1140, 1150, 1200, 1210, 1220, 1230|key=WnSSchedule}}" // She wake up randomly between 6:30AM to 12:30PM
+        },
+        {
+            "Name": "WnSWinnieScheduleStartTime10",
+            "Value": "{{Random: 640, 650, 700, 710, 720, 730, 740, 750, 800, 810, 820, 830, 840, 850, 900, 910, 920, 930, 940, 950, 1000, 1010, 1020, 1030, 1040, 1050, 1100, 1110, 1120, 1130, 1140, 1150, 1200, 1210, 1220, 1230, 1240|key=WnSSchedule}}" // She wake up randomly between 6:30AM to 12:30PM
+        },
+        // After 40 mins from wake up time
+        {
+            "Name": "WnSWinnieScheduleStartTime40",
+            "Value": "{{Random: 710, 720, 730, 740, 750, 800, 810, 820, 830, 840, 850, 900, 910, 920, 930, 940, 950, 1000, 1010, 1020, 1030, 1040, 1050, 1100, 1110, 1120, 1130, 1140, 1150, 1200, 1210, 1220, 1230, 1240, 1250, 1300, 1310|key=WnSSchedule}}"
+        },
+        // After 60 mins from wake up time
+        {
+            "Name": "WnSWinnieScheduleStartTime60",
+            "Value": "{{Random: 730, 740, 750, 800, 810, 820, 830, 840, 850, 900, 910, 920, 930, 940, 950, 1000, 1010, 1020, 1030, 1040, 1050, 1100, 1110, 1120, 1130, 1140, 1150, 1200, 1210, 1220, 1230, 1240, 1250, 1300, 1310, 1320, 1330|key=WnSSchedule}}"
+        },
+        // After 90 mins from wake up time
+        {
+            "Name": "WnSWinnieScheduleStartTime90",
+            "Value": "{{Random: 800, 810, 820, 830, 840, 850, 900, 910, 920, 930, 940, 950, 1000, 1010, 1020, 1030, 1040, 1050, 1100, 1110, 1120, 1130, 1140, 1150, 1200, 1210, 1220, 1230, 1240, 1250, 1300, 1310, 1320, 1330, 1340, 1350, 1400|key=WnSSchedule}}"
+        },
+        // After 120 mins from wake up time
+        {
+            "Name": "WnSWinnieScheduleStartTime120",
+            "Value": "{{Random: 830, 840, 850, 900, 910, 920, 930, 940, 950, 1000, 1010, 1020, 1030, 1040, 1050, 1100, 1110, 1120, 1130, 1140, 1150, 1200, 1210, 1220, 1230, 1240, 1250, 1300, 1310, 1320, 1330, 1340, 1350, 1400, 1410, 1420, 1430|key=WnSSchedule}}"
+        },
+        // After 170 mins from wake up time
+        {
+            "Name": "WnSWinnieScheduleStartTime170",
+            "Value": "{{Random: 920, 930, 940, 950, 1000, 1010, 1020, 1030, 1040, 1050, 1100, 1110, 1120, 1130, 1140, 1150, 1200, 1210, 1220, 1230, 1240, 1250, 1300, 1310, 1320, 1330, 1340, 1350, 1400, 1410, 1420, 1430, 1440, 1450, 1500, 1510, 1520|key=WnSSchedule}}"
+        },
+        // After 180 mins from wake up time
+        {
+            "Name": "WnSWinnieScheduleStartTime180",
+            "Value": "{{Random: 930, 940, 950, 1000, 1010, 1020, 1030, 1040, 1050, 1100, 1110, 1120, 1130, 1140, 1150, 1200, 1210, 1220, 1230, 1240, 1250, 1300, 1310, 1320, 1330, 1340, 1350, 1400, 1410, 1420, 1430, 1440, 1450, 1500, 1510, 1520, 1530|key=WnSSchedule}}"
+        },
+        // After 190 mins from wake up time
+        {
+            "Name": "WnSWinnieScheduleStartTime190",
+            "Value": "{{Random: 940, 950, 1000, 1010, 1020, 1030, 1040, 1050, 1100, 1110, 1120, 1130, 1140, 1150, 1200, 1210, 1220, 1230, 1240, 1250, 1300, 1310, 1320, 1330, 1340, 1350, 1400, 1410, 1420, 1430, 1440, 1450, 1500, 1510, 1520, 1530, 1540|key=WnSSchedule}}"
+        },
+        // After 200 mins from wake up time
+
+        {
+            "Name": "WnSWinnieScheduleStartTime200",
+            "Value": "{{Random: 950, 1000, 1010, 1020, 1030, 1040, 1050, 1100, 1110, 1120, 1130, 1140, 1150, 1200, 1210, 1220, 1230, 1240, 1250, 1300, 1310, 1320, 1330, 1340, 1350, 1400, 1410, 1420, 1430, 1440, 1450, 1500, 1510, 1520, 1530, 1540, 1550|key=WnSSchedule}}"
+        },
+        {
+            "Name": "WnSWinnieSchedule1",
+            "Value": "{{WnSWinnieScheduleStartTime}} {{ModId}}_House 36 27 0/" // After wake up she'll go to the bathroom
+            // {{WnSWinnieScheduleStartTime}} {{ModId}}_House 10 14 2 wns.winnie_morningwakeup/
+        },
+        {
+            "Name": "WnSWinnieSchedule2", // breakfast
+            "Value": "{{WnSWinnieScheduleStartTime40}} {{ModId}}_House 29 28 0 wns.winnie_kitchen \"Strings\\schedules\\WnS.Winnie:MorningFridge\"/{{WnSWinnieScheduleStartTime60}} {{ModId}}_House 27 28 0 wns.winnie_kitchen \"Strings\\schedules\\WnS.Winnie:MorningCooking\"/" // After that she'll check the fridge and cook something
+        },
+        {
+            "Name": "WnSWinnieSchedule3",
+            "Value": "{{WnSWinnieScheduleStartTime90}} {{ModId}}_House 26 29 2 wns.winnie_coffee \"Strings\\schedules\\WnS.Winnie:MorningCoffee\"/" // making coffee
+        },
+        {
+            "Name": "WnSWinnieSchedule4",
+            "Value": "{{WnSWinnieScheduleStartTime120}} {{ModId}}_House 24 29 2 wns.winnie_sit_kitchen_chair \"Strings\\schedules\\WnS.Winnie:MorningCoffee\"/" // Siting at the table eating breakfast
+        },
+        {
+            "Name": "WnSWinnieSchedule5",
+            "Value": "{{WnSWinnieScheduleStartTime180}} {{ModId}}_HiddenIslandCentral 20 26 2 wns.winnie_sit_hidden_island_lake \"Strings\\schedules\\WnS.Winnie:MorningLake\"/" // Go to the lake
+        },
+        // TODO Add ex and divorced gift reactions
+        {
+            "Name": "WnSWinnieIntroductionState",
+            "Value": "Default" //,
+            // "When": {
+            //   "HasSeenEvent |contains=": false //WnSWinnieIntroductionEventPart2
+            // }
+        },
+        // {
+        //   "Name": "WnSWinnieIntroductionState",
+        //   "Value": "AfterIntroductionEvent",
+        //   "When": {
+        //     "HasSeenEvent |contains=": true //WnSWinnieIntroductionEventPart2
+        //   }
+        // },
+        // {
+        //   "Name": "WnSWinnieIntroductionState",
+        //   "Value": "AfterBoatEvent",
+        //   "When": {
+        //     "HasSeenEvent |contains=": true //WnSWinnieBuiltBoatEventPart2
+        //   }
+        // },
+        // Test Backstory Framework
+        {
+            "Name": "WinnieFeelingAnswer",
+            "Value": "{{i18n:dialogue.BQF.WnS.Winnie.Feeling.Answer.Good}}"
+        }, 
+        {
+            "Name": "WinnieFeelingAnswer",
+            "Value": "{{i18n:dialogue.BQF.WnS.Winnie.Feeling.Answer.Bad}}",
+            "When": { "Weather": "Rain, Storm" }
+        },
+        {
+            "Name": "WinnieFeelingAnswer",
+            "Value": "{{i18n:dialogue.BQF.WnS.Winnie.Feeling.Answer.Monday}}",
+            "When": { "DayOfWeek": "Monday" }
+        }
+    ],
+    "Changes": [
+        // File Load
+        {
+            "LogName": "Load blank.json to init dialogue and schedule ",
+            "Action": "Load",
+            "Target": "Characters/Dialogue/WnS.Winnie, Characters/Dialogue/MarriageDialogueWnS.Winnie, Characters/schedules/WnS.Winnie, Strings/schedules/WnS.Winnie,  Characters/Dialogue/{{ModId}}_InvisibleTempActor",
+            "FromFile": "Data/blank.json"
+        },
+        {
+            "LogName": "Load blank.json to possible event locations",
+            "Action": "Load",
+            "Target": "Data/Events/{{ModId}}_HiddenIslandCentral, Data/Events/{{ModId}}_HiddenIsland, Data/Events/{{ModId}}_House",
+            "FromFile": "Data/blank.json"
+        },
+        {
+            "LogName": "Portraits and Sprites",
+            "Action": "Load",
+            "Target": "Portraits/WnS.Winnie, Characters/WnS.Winnie, Portraits/{{ModId}}_InvisibleTempActor, Characters/{{ModId}}_InvisibleTempActor",
+            "FromFile": "Assets/{{Target}}/{{TargetWithoutPath}}.png" // Must load the base first to avoid errors
+        },
+        // File Include
+        {
+            "LogName": "Adds Maps, objects, shops, misc. data",
+            "Action": "Include",
+            "FromFile": "Data/Locations.json, Data/Objects.json, Data/Shops.json, Data/Mails.json, Data/ETC.json, Data/TriggerActions.json"
+        },
+        {
+            "LogName": "Adds NPC data",
+            "Action": "Include",
+            "FromFile": "Data/Characters/Characters.json, Data/Characters/Dialogues.json, Data/Characters/DialoguesForGifts.json, Data/Characters/DialoguesForTopics.json, Data/Characters/Events.json, Data/Characters/Festivals.json, Data/Characters/Movies.json, Data/Characters/Schedules.json"
+        },
+        //  TODO: Add Data/Characters/Festivals.json, Data/Characters/Movies.json
+
+        // Compatibility
+        {
+            "LogName": "Adds NPC Map Locations Fixes",
+            "Action": "Include",
+            "FromFile": "Data/Compatibility/NPCMapLocations.json",
+            "When": {
+                "HasMod": "Bouhm.NPCMapLocations"
+            }
+        },
+        {
+            "LogName": "Adds Backstory Question Framework",
+            "Action": "Include",
+            "FromFile": "Data/Compatibility/BackstoryQuestionsFramework.json",
+            "When": {
+                "HasMod": "spacechase0.SpaceCore"
+            }
+        }
+    ]
+}

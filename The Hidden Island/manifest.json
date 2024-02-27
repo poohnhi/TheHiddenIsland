@@ -1,0 +1,15 @@
+{
+  "Name": "[NPC] The Hidden Island",
+  "Author": "Pooh",
+  "Version": "1.0.0",
+  "Description": "Adds item functions for The Hidden Island.",
+  "UniqueID": "poohnhi.WnS",
+  "EntryDll": "The Hidden Island.dll",
+  "UpdateKeys": [ "Nexus:18625" ],
+  "Dependencies": [
+    {
+      "UniqueID": "Pathoschild.ContentPatcher",
+      "IsRequired": false
+    }
+  ]
+}

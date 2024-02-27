@@ -1,0 +1,13 @@
+{
+	"Changes": [
+		{
+			"LogName": "Winnie's Conversation Topics",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/WnS.Winnie",
+			"Entries": {
+				// When the player first arrived in town, say hi if not see the event yet (for farmhands) - Also first time meeting someone (if seen events)
+				"Introduction": "{{i18n:dialogue.topic.Introduction.{{TargetWithoutPath}}.{{WnSWinnieIntroductionState}}}}"
+            }
+        }
+    ]
+}

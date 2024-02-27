@@ -1,0 +1,64 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "LogName": "Normal Mode Winnie Custom Gift Dialogue",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/WnS.Winnie",
+            "Entries": {
+                // Special items
+                "RejectItem_(O)460": "{{i18n:dialogue.gift.WnS.Winnie.RejectItem_Mermaids_Pendant}}",
+                "RejectItem_(O)458": "{{i18n:dialogue.gift.WnS.Winnie.RejectItem_Bouquet}}",
+                "RejectItem_(O)809": "{{i18n:dialogue.gift.WnS.Winnie.RejectItem_MovieTicket}}", // need case when divorced
+                
+                // Custom loved gift dialogues
+                "AcceptGift_(O)202": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Fried_Calamari.{{Random:\" \", {{Range: 1, 10}}}} |default={{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Fried_Calamari}}}}{{CGD.WnS.Winnie.LovedAppreciate}}",
+                "AcceptGift_(O)203": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Strange_Bun.{{Random:\" \", {{Range: 1, 6}}}} |default={{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Strange_Bun}}}}{{CGD.WnS.Winnie.LovedAppreciate}}",
+                "AcceptGift_(O)373": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Golden_Pumpkin.{{Random:\" \", {{Range: 1, 6}}}} |default={{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Golden_Pumpkin}}}}{{CGD.WnS.Winnie.LovedAppreciate}}",
+                
+                "AcceptGift_(O){{WnSWinnieRandomizeLovedGift}}": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_RandomLovedGift.{{Random:\" \", {{Range: 1, 3}}}} |default={{i18n:dialogue.gift.WnS.Winnie.AcceptGift_RandomLovedGift}}}}{{CGD.WnS.Winnie.LovedAppreciate}}",
+                
+                // Custom liked gift dialogues
+                "AcceptGift_(O)253": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Triple_Shot_Espresso}}{{CGD.WnS.Winnie.LikedAppreciate}}",
+                "AcceptGift_(O)395": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Coffee}}{{CGD.WnS.Winnie.LikedAppreciate}}",
+                "AcceptGift_(O)151": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Squid}}{{CGD.WnS.Winnie.LikedAppreciate}}",
+                "AcceptGift_(O)798": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Midnight_Squid}}{{CGD.WnS.Winnie.LikedAppreciate}}",
+                "AcceptGift_(O)308": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Void_Mayonnaise}}{{CGD.WnS.Winnie.LikedAppreciate}}",
+                "AcceptGift_(O)305": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Void_Egg}}{{CGD.WnS.Winnie.LikedAppreciate}}",
+                "AcceptGift_(O)769": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Void_Essence}}{{CGD.WnS.Winnie.LikedAppreciate}}", //after meeting krobus
+                "AcceptGift_(O)614": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Green_Tea}}{{CGD.WnS.Winnie.LikedAppreciate}}", //after meeting krobus
+
+                // Custom neutral gift dialogues
+                "AcceptGift_food_seafood": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_food_seafood}}{{CGD.WnS.Winnie.LikedAppreciate}}",
+                "AcceptGift_food_sweet": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_food_sweet}}{{CGD.WnS.Winnie.LikedAppreciate}}",
+
+                "RejectItem_trash_item": "...Isn't this trash? There's a trash can outside the house and a trash can next to the kitchen if you want to throw them away. No, I'm not going to help you for that, do it yourself.",
+
+                // Custom hated gift dialogues
+                "AcceptGift_category_monster_loot": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_category_monster_loot}}",
+                "AcceptGift_(O)167": "{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Joja_Cola}}",
+                "RejectItem_(O)446": "{{i18n:dialogue.gift.WnS.Winnie.RejectItem_Rabbits_Foot}}",
+                "RejectItem_(O)346": "{{i18n:dialogue.gift.WnS.Winnie.RejectItem_Beer}}",
+                "RejectItem_(O)303": "{{i18n:dialogue.gift.WnS.Winnie.RejectItem_Pale_Ale}}",
+                "RejectItem_(O)348": "{{i18n:dialogue.gift.WnS.Winnie.RejectItem_Wine}}",
+                "RejectItem_(O)874": "{{i18n:dialogue.gift.WnS.Winnie.RejectItem_Bug_Steak}}",
+                "RejectItem_(O)684": "{{i18n:dialogue.gift.WnS.Winnie.RejectItem_Bug_Meat}}",
+                "RejectItem_(O)768": "{{i18n:dialogue.gift.WnS.Winnie.RejectItem_Solar_Essence}}",
+                "RejectItem_(O)226": "{{i18n:dialogue.gift.WnS.Winnie.RejectItem_Spicy_Eel}}",
+                "RejectItem_(O)215": "{{i18n:dialogue.gift.WnS.Winnie.RejectItem_Pepper_Poppers}}",
+
+				// TODO
+				// Shown when receiving a birthday gift from the player
+				"AcceptBirthdayGift_(O)373": "A golden pumpkin for my birthday? Thank you so much, @!$4",
+				"AcceptBirthdayGift_forage_item": "Forages... For a birthday gift? Hmm.$18",
+				"AcceptBirthdayGift_Loved": "Wow, this is an awesome gift!$11",
+				"AcceptBirthdayGift_Negative": "You are seriously going to give me this on my birthday?... Ugh, forget about it.$9",
+				"AcceptBirthdayGift_Positive": "This is such a nice gift! Thank you so much!$14",
+				"AcceptBirthdayGift": "Thanks for the birthday gift!",
+            },
+            "When": {
+                "HasFlag|contains=WnSWinnieWipedMemoryAttempt": false,
+            }
+        }
+    ]
+}

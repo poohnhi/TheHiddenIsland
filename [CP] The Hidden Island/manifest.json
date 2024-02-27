@@ -1,0 +1,54 @@
+{
+    "$schema": "https://smapi.io/schemas/manifest.json",
+    "Name": "[NPC] The Hidden Island CP",
+    "Author": "Pooh",
+    "Version": "1.0.0",
+    "Description": "Adds a pair of evil twins to your game.",
+    "UniqueID": "poohnhi.WnS.CP",
+    "UpdateKeys": ["Nexus:18625"],
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher"
+    },
+    "Dependencies": [
+        {
+            "UniqueID": "spacechase0.SpaceCore",
+            "IsRequired": false
+        },
+        {
+            "UniqueID": "poohnhi.PoohCore",
+            "IsRequired": true
+        },
+        {
+            "UniqueID": "Lemurkat.EastScarpe.CP",
+            "IsRequired": false
+        },
+        {
+            "UniqueID": "DaisyNiko.Tilesheets",
+            "IsRequired": true
+        },
+        {
+            "UniqueID": "Lumisteria.LumiTilesheetsIndoor",
+            "IsRequired": true
+        },
+        {
+            "UniqueID": "Lumisteria.TtilesheetsOutdoor",
+            "IsRequired": true
+        },
+        {
+            "UniqueID": "Lumisteria.LumiWallsAndFloors",
+            "IsRequired": true
+        },
+        {
+            "UniqueID": "aedenthorn.CustomFixedDialogue",
+            "IsRequired": false
+        },
+        {
+            "UniqueID": "aedenthorn.MobilePhone",
+            "IsRequired": false
+        },
+        {
+            "UniqueID": "Bouhm.NPCMapLocations",
+            "IsRequired": false
+        }
+    ]
+}

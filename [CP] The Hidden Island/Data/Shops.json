@@ -1,0 +1,75 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "LogName": "Add a shop",
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "Entries": {
+                "{{ModId}}_WinnieShop": {
+                    "Currency": 0, // use money to trade
+                    "StackSizeVisibility": "ShowIfMultiple", // draw the stack size if its more than one
+                    "PriceModifiers": null,
+                    "PriceModifierMode": "Stack",
+                    "VisualTheme": null, // TODO
+                    "SalableItemTags": [
+                        "category_minerals",
+                        "category_gem",
+                        "category_metal_resources",
+                        "category_building_resources",
+                        "category_monster_loot",
+                        "category_weapon",
+                        "category_boots",
+                        "category_ring",
+                        "category_greens",
+                        "category_vegetable",
+                        "category_fruits",
+                        "category_flowers",
+                        "category_seeds",
+                        "category_sell_at_pierres",
+                        "category_sell_at_pierres_and_marnies",
+                        "category_milk",
+                        "category_artisan_goods",
+                        "category_egg",
+                        "category_meat",
+                        "category_fertilizer",
+                        "category_cooking",
+                        "category_ingredients",
+                        "category_bait",
+                        "category_fish",
+                        "category_sell_at_fish_shop",
+                        "category_tackle",
+                        "category_big_craftable",
+                        "category_crafting",
+                        "category_syrup",
+                        "category_equipment"
+                      ], // a list of context tags for item which the player can sell to this shop
+                    "Items": [
+                        {
+                            "Price": 200, // price of this item
+                            "AvailableStock": 1, // can buy 1 a day
+                            "AvailableStockLimit": "Player", // limit applies to each player separately
+                            "Id": "(O){{ModId}}_SurpriseBoxSeedsR",
+                            "ItemId": "(O){{ModId}}_SurpriseBoxSeedsR",
+                        },
+                        {
+                            "Price": 500, // price of this item
+                            "AvailableStock": 1, // can buy 1 a day
+                            "AvailableStockLimit": "Player", // limit applies to each player separately
+                            "Id": "(O){{ModId}}_SurpriseBoxSeedsSR",
+                            "ItemId": "(O){{ModId}}_SurpriseBoxSeedsSR",
+                        },
+                        {
+                            "Price": 2000, // price of this item
+                            "AvailableStock": 1, // can buy 1 a day
+                            "AvailableStockLimit": "Player", // limit applies to each player separately
+                            "Id": "(O){{ModId}}_SurpriseBoxSeedsSSR",
+                            "ItemId": "(O){{ModId}}_SurpriseBoxSeedsSSR",
+                        }
+                    ],
+                    "CustomFields": {},
+                }
+            }
+        }
+    ]
+}

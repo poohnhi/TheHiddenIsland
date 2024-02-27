@@ -1,0 +1,40 @@
+{
+    "Changes": [{
+            "LogName": "Winnie Custom Festival Dialogue",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/WnS.Winnie",
+            "Entries": {
+                // Shown at the Flower Dance when the NPC agrees to dance
+                "FlowerDance_Accept_Roommate": "{{i18n:dialogue.festival.{{TargetWithoutPath}}.FlowerDance_Accept_Roommate}}",
+                "FlowerDance_Accept_Spouse": "{{i18n:dialogue.festival.{{TargetWithoutPath}}.FlowerDance_Accept_Spouse}}",
+                "FlowerDance_Accept": "{{i18n:dialogue.festival.{{TargetWithoutPath}}.FlowerDance_Accept}}",
+                // Reject an offer to dance because low heart
+                "FlowerDance_Decline": "{{i18n:dialogue.festival.{{TargetWithoutPath}}.FlowerDance_Decline}}",
+
+                // Shown at the Stardew Valley Fair while Lewis is judging the grange displays.
+                "Fair_Judging": "{{i18n:dialogue.festival.{{TargetWithoutPath}}.Fair_Judging}}",
+                // The player put the lucky purple shorts in their display
+                "Fair_Judged_PlayerLost_PurpleShorts": "{{i18n:dialogue.festival.{{TargetWithoutPath}}.Fair_Judged_PlayerLost_PurpleShorts}}",
+                // The player didn't put anything in their display
+                "Fair_Judged_PlayerLost_Skipped": "{{i18n:dialogue.festival.{{TargetWithoutPath}}.Fair_Judged_PlayerLost_Skipped}}",
+                // The player didn't/did win first place
+                "Fair_Judged_PlayerLost": "{{i18n:dialogue.festival.{{TargetWithoutPath}}.Fair_Judged_PlayerLost}}",
+                "Fair_Judged_PlayerWon": "{{i18n:dialogue.festival.{{TargetWithoutPath}}.Fair_Judged_PlayerWon}}",
+                // Shown if a more specific dialogue didn't match
+                "Fair_Judged": "{{i18n:dialogue.festival.{{TargetWithoutPath}}.Fair_Judged}}",
+
+                // When the NPC gives the player their gift (before and after the player opens it)
+                "WinterStar_GiveGift_Before_Roommate": "",
+                "WinterStar_GiveGift_Before_Spouse": "",
+                "WinterStar_GiveGift_Before": "So you're my Winter Star... I hope you like it!",
+                "WinterStar_GiveGift_After_Roommate": "",
+                "WinterStar_GiveGift_After_Spouse": "",
+                "WinterStar_GiveGift_After": "",
+                // When receiving their gift from the player
+                "WinterStar_ReceiveGift_<id>": "",
+                "WinterStar_ReceiveGift_<tag>": "",
+                "WinterStar_ReceiveGift": ""
+            }
+        }
+    ]
+}

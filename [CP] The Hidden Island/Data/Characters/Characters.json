@@ -1,0 +1,91 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        // Spawn NPC For SDV 1.6 
+        {
+            "LogName": "Npc Dispositions 1.6",
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "Entries": {
+                "{{ModId}}_InvisibleTempActor": {
+                    "DisplayName": "InvisibleTempActor",
+                    "SocialTab": "HiddenAlways",
+                    "CanSocialize": "FALSE",
+                    "IntroductionsQuest": false,
+                    "PerfectionScore": false,
+                    "EndSlideShow": "Hidden",
+                    "Home": [{
+                        "Id": "WinnieHome",
+                        "Location": "{{ModId}}_House",
+                        "Tile": {
+                            "X": 27,
+                            "Y": 36
+                        },
+                        "Direction": "Up"
+                    }],
+                    "Breather": false,
+                },
+                "WnS.Winnie": {
+                    // TODO Add When HasSeen:Introduction event here
+                    // Basic infos
+                    "DisplayName": "{{i18n:character.WnS.Winnie.DisplayName}}", // This would normally use {{i18n:}} to support translations
+                    "Gender": "Female", // Male, Female or Undefined
+                    "Age": "Adult", // Child, Teen or Adult
+                    "Language": "Default", // Default or Dwarvish
+                    "HomeRegion": "Other", // Will change to Town after boat
+
+                    // Basic traits
+                    "Manner": "Rude", // Neutral, Polite or Rude
+                    "SocialAnxiety": "Shy", // Neutral, Outgoing or Shy
+                    "Optimism": "Negative", // Neutral, Negative or Positive
+
+                    // Birthday
+                    "BirthSeason": "summer",
+                    "BirthDay": 28,
+
+                    // Social features
+                    "CanSocialize": true,
+                    "CanBeRomanced": true,
+                    "CanReceiveGifts": true,
+                    "CanCommentOnPurchasedShopItems": false,
+                    "CanGreetNearbyCharacters": false,
+                    "CanVisitIsland": false,
+                    "Calendar": "HiddenAlways", // change to AlwaysShown if first birthday event for Winnie
+                    "SocialTab": "UnknownUntilMet", // change to UnknownUntilMet after introduction event 1
+                    "IntroductionsQuest": false,
+                    "ItemDeliveryQuests": false,
+                    "PerfectionScore": true,
+                    "EndSlideShow": "MainGroup",
+                    "FriendsAndFamily": {
+                        //"WnS.Solary": "{{i18n:character.WnS.Winnie.Brother}}"
+                    },
+                    // WinterStarParticipant enable only after boat
+                    // WinterStarGifts enable only after boat
+                    // UnlockConditions only when after introduction 1 i think
+                    // 
+                    "Home": [{
+                        "Id": "WinnieHome",
+                        "Location": "{{ModId}}_House",
+                        "Tile": {
+                            "X": 9,
+                            "Y": 15
+                        },
+                        "Direction": "Up"
+                    }],
+                    "Breather": true,
+                },
+
+            }
+        },
+        // Gift Tastes
+        {
+            "LogName": "Gift Tastes",
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "WnS.Winnie": "{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Love{{WnSWinnieFlirty}} |default={{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Love}}}}/202 203 373 {{WnSWinnieRandomizeLovedGift}}/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Like}}/151 253 305 308 395 614 769 798 797 279 -80/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Dislike{{WnSWinnieAngry}}|default={{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Dislike}}}}/-4 -81/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Hate{{WnSWinnieAngry}}|default={{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Hate}}}}/303 346 348 446 684 873 874 768 167 -28 215 226 907/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Neutral}}/260 459 613 634 635 636 637 638 -7 -75 -79 -26 -2 74/"
+            }
+            // TODO Add When HasSeen:Introduction event here
+        },
+    ]
+}

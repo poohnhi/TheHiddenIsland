@@ -1,0 +1,125 @@
+{
+    "Changes": [{
+            //Directions: 0 = UP, 1 = RIGHT, 2 = DOWN, 3 = LEFT
+            //Main Schedule
+            "LogName": "Winnie Main Schedule",
+            "Action": "EditData",
+            "Target": "Characters/schedules/WnS.Winnie",
+            "Entries": {
+                "spring": "610 {{ModId}}_House 9 15 2 wns.winnie_morningslep/
+                {{WnSWinnieScheduleStartTime}} {{ModId}}_House 36 27 0/
+                {{WnSWinnieScheduleStartTime40}} {{ModId}}_House 27 29 2/
+                {{WnSWinnieScheduleStartTime60}} {{ModId}}_House 29 28 0 wns.winnie_kitchen \"Strings\\schedules\\WnS.Winnie:MorningFridge\"/
+                {{WnSWinnieScheduleStartTime90}} {{ModId}}_House 27 28 0 wns.winnie_coffee \"Strings\\schedules\\WnS.Winnie:MorningCooking\"/
+                {{WnSWinnieScheduleStartTime120}} {{ModId}}_House 24 29 2 wns.winnie_sit_kitchen_chair \"Strings\\schedules\\WnS.Winnie:MorningCoffee\"/
+                {{WnSWinnieScheduleStartTime180}} {{ModId}}_HiddenIslandCentral 20 26 2 wns.winnie_sit_hidden_island_lake/
+                1800 {{ModId}}_HiddenIsland 20 47 2/
+                2400 {{ModId}}_House 9 15 2 wns.winnie_sleep"
+            }
+        },
+        {
+            "LogName": "Winnie Animations",
+            "Action": "EditData",
+            "Target": "Data/animationDescriptions",
+            "Entries": {
+                "wns.winnie_kitchen": "26/26/26//laying_down/offset -3 -28",
+                "wns.winnie_coffee": "26/26/26//laying_down/offset -3 -28",
+                "wns.winnie_sit": "16/16 16 16 17 17 17 18 18 18 19 19 19/16",
+                "wns.winnie_sit_kitchen_chair": "16/16 16 16 17 17 17 18 18 18 19 19 19 16 16 16 17 17 17 18 18 18 19 19 19 16 16 16 17 17 17 18 18 18 19 19 19 16 16 16 17 17 17 18 18 18 19 19 19 16 16 16 17 17 17 18 18 18 19 19 19 16 16 16 17 17 17 18 18 18 19 19 19 20 21 22 23 17 17 18 18 18 19 19 19/16//offset 0 40",
+                "wns.winnie_sit_kitchen_table": "16/16 16 16 17 17 17 18 18 18 19 19 19 16 16 16 17 17 17 18 18 18 19 19 19 16 16 16 17 17 17 18 18 18 19 19 19 16 16 16 17 17 17 18 18 18 19 19 19 16 16 16 17 17 17 18 18 18 19 19 19 16 16 16 17 17 17 18 18 18 19 19 19 20 21 22 23 17 17 18 18 18 19 19 19/16//offset 0 -14",
+                "wns.winnie_sit_hidden_island_lake": "16/16 16 16 17 17 17 18 18 18 19 19 19 16 16 16 17 17 17 18 18 18 19 19 19 16 16 16 17 17 17 18 18 18 19 19 19 16 16 16 17 17 17 18 18 18 19 19 19 16 16 16 17 17 17 18 18 18 19 19 19 16 16 16 17 17 17 18 18 18 19 19 19 20 21 22 23 17 17 18 18 18 19 19 19/16//offset 0 16",
+                "wns.winnie_sleep": "29/29/29",
+                "wns.winnie_morningslep": "35/35/35 35 35 35 35 35 35 35 34 34 34 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33 33//offset 16 16",
+              }
+        },
+        {
+          "LogName": "Winnie schedule will choose a random breakfast dish to display",
+          "Action": "EditMap",
+          "Target": "Maps/{{ModId}}_House",
+          "MapProperties": 
+            {
+              "{{ModId}}.WinnieBreakfastDrink": "{{WnSWinnieMorningCoffeeChoice}}",
+              "{{ModId}}.WinnieBreakfast": "{{WnSWinnieMorningBreakfastChoice}}"
+            }
+        },
+        {
+          "LogName": "Look room until wake up base on Winnie's schedule",
+          "Action": "EditMap",
+          "Target": "Maps/{{ModId}}_House",
+          "MapTiles": [
+                {
+                    "Position": { "X": 4, "Y": 19 },
+                    "Layer": "Buildings",
+                    "SetProperties": {
+                        "Action": "Message WnSHouse_Hallway_LockedDoor"
+                    }
+                }
+            ],
+          "When": {
+            "Time": "{{Range: 600, {{WnSWinnieScheduleStartTime}}}}"
+          },
+          "Update": "OnTimeChange"
+        },
+        {
+            "LogName": "Don't let player read Winnie's diary before she wake up",
+            "Action": "EditMap",
+            "Target": "Maps/{{ModId}}_House",
+            "MapTiles": [
+                  {
+                      "Position": { "X": 9, "Y": 16 },
+                      "Layer": "Buildings",
+                      "SetProperties": {
+                          "Action": null
+                      }
+                  }
+              ],
+            "When": {
+              "Time": "{{Range: 600, {{WnSWinnieScheduleStartTime10}}}}"
+            },
+            "Update": "OnTimeChange"
+          },
+        {
+            "LogName": "Default Schedule Strings",
+            "Action": "EditData",
+            "Target": "Strings/schedules/WnS.Winnie",
+            "Entries": {
+                // Schedule strings
+                "MorningCoffee": "{{WnSWinnieMorningCoffee}}",
+                "MorningSleep": "{{i18n:schedule.string.WnS.Winnie.MorningSleep.{{Random:1,2}}}}",
+                "MorningFridge": "{{i18n:schedule.string.WnS.Winnie.MorningFridge}}",
+                "MorningCooking": "{{i18n:schedule.string.WnS.Winnie.MorningCooking}}",
+                "MorningBeach": "{{i18n:schedule.string.WnS.Winnie.MorningBeach.{{Random:1,2}}}}",
+                "MorningLake": "{{i18n:schedule.string.WnS.Winnie.MorningLake.{{Random:1,2}}}}",
+                "AfternoonSleep": "{{i18n:schedule.string.WnS.Winnie.AfternoonSleep}}",
+                "LateNightBeach": "{{i18n:schedule.string.WnS.Winnie.LateNightBeach.{{Random:1,2}}}}",
+                "PoolInn": "{{i18n:schedule.string.WnS.Winnie.PoolInn.{{Random:1,2,3,4}}}}"
+            }
+        },
+        {
+            "LogName": "Schedule Strings on Rainy Days",
+            "Action": "EditData",
+            "Target": "Strings/schedules/WnS.Winnie",
+            "Entries": {
+                // Schedule strings on rain or storm weather
+                "MorningBeach": "{{i18n:schedule.string.WnS.Winnie.MorningBeach.Rain.{{Random:1,2}}}}",
+                "LateNightBeach": "{{i18n:schedule.string.WnS.Winnie.LateNightBeach.Rain.{{Random:1,2}}}}"
+            },
+            "When": {
+                "Weather": "rain, storm"
+            }
+        },
+        {
+          // My schedule: 1000 {{ModId}}_HiddenIslandCentral 20 25 2 \"Strings\\schedules\\WnS.Winnie:MorningLake\"/
+          "LogName": "Winnie Change Location Dialogue",
+          "Action": "EditData",
+          "Target": "Characters/Dialogue/WnS.Winnie",
+          "Entries": {
+              "{{ModId}}_House": "I'm going out for some fresh air."
+          },
+          "When": {
+              "Time": "{{Range: {{WnSWinnieScheduleStartTime180}}, {{WnSWinnieScheduleStartTime190}}}}"
+          },
+          "Update": "OnTimeChange"
+      }
+    ]
+}

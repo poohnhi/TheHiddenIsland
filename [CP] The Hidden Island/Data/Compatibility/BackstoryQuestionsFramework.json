@@ -1,0 +1,99 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        // Hold left control when right clicking an NPC to open a dialogue box with choices for interactions.
+        // By default this only includes chatting (and gifting if you are holding something), but mods can add new entries.
+        // Content pack authors can let you ask an NPC questions by editing an asset from Content Patcher (see "NPC Questions" in the content pack authors). You can ask one question per day.
+        // You can set this menu to always show up when interacting with an NPC in the config, in case you want to (for example) prevent accidentally gifting an item to somebody.
+
+        // To edit the questions you can ask someone, edit the spacechase0.SpaceCore/Questions asset, which is a dictionary with the NPC name for the key, and the value being a list of objects with the following values:
+        // ID - Required, must be unique, doesn't show to end users
+        // Weight - How likely the question will show up compared to other questions. Higher values means more likely likely. Default 1.
+        // QuestionText - The text for the question.
+        // AnswerText - The text for the answer.
+        // CanRepeatQuestion - If the question can be repeated. Default false.
+        // FriendshipModifier - How much friendship the player gets from asking this question. Default 10.
+        {
+            "Action": "EditData",
+            "Target": "spacechase0.SpaceCore/Questions",
+            "TargetField": [ "WnS.Winnie" ],
+            "Entries": {
+                "Feeling": {
+                    "ID": "Feeling",
+                    "Weight": 10,
+                    "QuestionText": "{{i18n:dialogue.BQF.WnS.Winnie.Feeling.Question}}",
+                    "AnswerText": "{{WinnieFeelingAnswer}}",
+                    "CanRepeatQuestion": true
+                },
+                "Plushies": {
+                    "ID": "Plushies",
+                    "Weight": 1,
+                    "QuestionText": "{{i18n:dialogue.BQF.WnS.Winnie.Plushies.Question}}",
+                    "AnswerText": "{{i18n:dialogue.BQF.WnS.Winnie.Plushies.Answer}}",
+                    "CanRepeatQuestion": true
+                },
+                "WinniePreference.1": {
+                    "ID": "WinniePreference.1",
+                    "Weight": 1,
+                    "QuestionText": "{{i18n:dialogue.BQF.WnS.Winnie.WinniePreference.1.Question}}",
+                    "AnswerText": "{{i18n:dialogue.BQF.WnS.Winnie.WinniePreference.1.Answer}}",
+                },
+                "WinniePreference.2": {
+                    "ID": "WinniePreference.2",
+                    "Weight": 1,
+                    "QuestionText": "{{i18n:dialogue.BQF.WnS.Winnie.WinniePreference.2.Question}}",
+                    "AnswerText": "{{i18n:dialogue.BQF.WnS.Winnie.WinniePreference.2.Answer}}",
+                },
+                "WinniePreference.3": {
+                    "ID": "WinniePreference.3",
+                    "Weight": 1,
+                    "QuestionText": "{{i18n:dialogue.BQF.WnS.Winnie.WinniePreference.3.Question}}",
+                    "AnswerText": "{{i18n:dialogue.BQF.WnS.Winnie.WinniePreference.3.Answer}}",
+                },
+                "SolaryPreference.1": {
+                    "ID": "SolaryPreference.1",
+                    "Weight": 1,
+                    "QuestionText": "{{i18n:dialogue.BQF.WnS.Winnie.SolaryPreference.1.Question}}",
+                    "AnswerText": "{{i18n:dialogue.BQF.WnS.Winnie.SolaryPreference.1.Answer}}",
+                }
+            }
+        },
+        // There is also a new Content Patcher token, spacechase0.BackstoryQuestionsFramework/QuestionsAsked that returns the list of (non-repeatable) questions that have been asked before. You can use this to provide further questions only if you asked a certain one before, only put an event into a location if you've asked a question, etc. (See example pack for a full example of using it as a prerequisite for another question.) Example usage for a when block:
+        {
+            "Action": "EditData",
+            "Target": "spacechase0.SpaceCore/Questions",
+            "TargetField": ["WnS.Winnie"],
+            "When": {
+                "LocationName": "{{ModId}}_HiddenIslandCentral"
+                //"spacechase0.SpaceCore/QuestionsAsked: WnS.Winnie": "math.simple"
+            },
+            "Entries": {
+                "HowIsTheScenery": {
+                    "ID": "HowIsTheScenery",
+                    "Weight": 10,
+                    "QuestionText": "How's the scenery?",
+                    "AnswerText": "Cool.",
+                    "FriendshipModifier": 0,
+                    "CanRepeatQuestion": true
+                }
+            },
+            "Update": "OnLocationChange"
+        }
+        
+        // "math.simple": {
+        //     "ID": "math.simple",
+        //     "Weight": 3,
+        //     "QuestionText": "{{i18n: math.simple.question}}",
+        //     "AnswerText": "{{i18n: math.simple.answer}}",
+        //     "FriendshipModifier": 0
+        // },
+        // "quote": {
+        //     "ID": "quote",
+        //     "Weight": 3,
+        //     "QuestionText": "{{i18n: quote.question}}",
+        //     "AnswerText": "{{Random: {{i18n: quote.answer.1}} @@ {{i18n: quote.answer.2}} @@ {{i18n: quote.answer.3}} |inputSeparator=@@}}",
+        //     "CanRepeatQuestion": true,
+        //     "FriendshipModifier": 5
+        // },
+    ]
+}

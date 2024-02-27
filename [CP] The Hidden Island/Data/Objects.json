@@ -1,0 +1,727 @@
+{
+    "Changes": [
+        // load item sprite png to the game
+        {
+            "LogName": "Add object sprite",
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Objects",
+            "FromFile": "Assets/Image/{{TargetWithoutPath}}.png" // assets/Objects.png
+        },
+        // add item to Data/Objects
+        {
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_HiddenIslandWarpTotem": {
+                    "Name": "{{ModId}}_HiddenIslandWarpTotem",
+                    "DisplayName": "{{i18n:object.HiddenIslandWarpTotem.name}}",
+                    "Description": "{{i18n:object.HiddenIslandWarpTotem.description}}",
+                    "Type": "Basic",
+                    "Category": 0,
+                    "Edibility": -300,
+                    "Price": 20,
+                    "Texture": "Mods/{{ModId}}/Objects",
+                    "SpriteIndex": 0,
+                    "ContextTags": [
+                        "color_brown",
+                        "totem_item",
+                        "wns_hidden_island_totem",
+                        "not_placeable"
+                    ]
+                },
+                "{{ModId}}_SleepingPills": {
+                    "Name": "{{ModId}}_SleepingPills",
+                    "DisplayName": "{{i18n:object.SleepingPills.name}}",
+                    "Description": "{{i18n:object.SleepingPills.description}}",
+                    "Type": "Basic",
+                    "Category": 0,
+                    "Edibility": 1,
+                    "IsDrink": true,
+                    "Price": 20,
+                    "Texture": "Mods/{{ModId}}/Objects",
+                    "SpriteIndex": 3,
+                    "ContextTags": [
+                        "color_white",
+                        "not_placeable"
+                    ]
+                },
+                "{{ModId}}_SurpriseBoxSeedsR": {
+                    "Name": "{{ModId}}_SurpriseBoxSeedsR",
+                    "DisplayName": "{{i18n:object.SurpriseBoxSeedsR.name}}",
+                    "Description": "{{i18n:object.SurpriseBox.description}}",
+                    "Type": "Basic",
+                    "Edibility": -300,
+                    "Price": 50,
+                    "Texture": "Mods/{{ModId}}/Objects",
+                    "SpriteIndex": 20,
+                    "GeodeDrops": [
+                        {
+                            "Chance": 0.01,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "HighestValueSeeds",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 501",
+                            "MinStack": 1,
+                            "MaxStack": 1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false
+                        },
+                        {
+                            "Chance": 0.05,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "VeryHighValueSeeds",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 100 500",
+                            "MinStack": 1,
+                            "MaxStack": 1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false
+                        },
+                        {
+                            "Chance": 0.1,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "HighValueSeeds",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 76 99",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                //"RandomAmount": [5]
+                                "RandomAmount": [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 5]
+                            }],
+                            "StackModifierMode": "Stack"
+                        },
+                        {
+                            "Chance": 0.25,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "MidValueSeeds",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 26 75",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                //"RandomAmount": [10]
+                                "RandomAmount": [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                            }],
+                            "StackModifierMode": "Stack"
+                        },
+                        {
+                            "Chance": 1.0,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "LowValueSeeds",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 0 25, !ITEM_ID Target (O)890",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                //"RandomAmount": [20]
+                                "RandomAmount": [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 6, 7, 8, 9, 10, 15, 20]
+                            }],
+                            "StackModifierMode": "Stack"
+                        }
+                    ],
+                    "ArtifactSpotChances": null,
+                    "ContextTags": [
+                        "color_green"
+                    ],
+                    "CustomFields": {}
+                },
+                "{{ModId}}_SurpriseBoxSeedsSR": {
+                    "Name": "{{ModId}}_SurpriseBoxSeedsSR",
+                    "DisplayName": "{{i18n:object.SurpriseBoxSeedsSR.name}}",
+                    "Description": "{{i18n:object.SurpriseBox.description}}",
+                    "Type": "Basic",
+                    "Category": 0,
+                    "Edibility": -300,
+                    "Price": 100,
+                    "Texture": "Mods/{{ModId}}/Objects",
+                    "SpriteIndex": 21,
+                    "GeodeDrops": [
+                        {
+                            "Chance": 0.02,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "HighestValueSeeds",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 501",
+                            "MinStack": 1,
+                            "MaxStack": 1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false
+                        },
+                        {
+                            "Chance": 0.1,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "VeryHighValueSeeds",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 100 500",
+                            "MinStack": 1,
+                            "MaxStack": 1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false
+                        },
+                        {
+                            "Chance": 0.2,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "HighValueSeeds",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 76 99",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                //"RandomAmount": [5]
+                                "RandomAmount": [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 5]
+                            }],
+                            "StackModifierMode": "Stack"
+                        },
+                        {
+                            "Chance": 0.5,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "MidValueSeeds",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 26 75",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                //"RandomAmount": [10]
+                                "RandomAmount": [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                            }],
+                            "StackModifierMode": "Stack"
+                        },
+                        {
+                            "Chance": 1.0,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "LowValueSeeds",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 0 25, !ITEM_ID Target (O)890",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                //"RandomAmount": [20]
+                                "RandomAmount": [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 6, 7, 8, 9, 10, 15, 20]
+                            }],
+                            "StackModifierMode": "Stack"
+                        }
+                    ],
+                    "ArtifactSpotChances": null,
+                    "ContextTags": [
+                        "color_green"
+                    ],
+                    "CustomFields": {}
+                },
+                "{{ModId}}_SurpriseBoxSeedsSSR": {
+                    "Name": "{{ModId}}_SurpriseBoxSeedsSSR",
+                    "DisplayName": "{{i18n:object.SurpriseBoxSeedsSSR.name}}",
+                    "Description": "{{i18n:object.SurpriseBox.description}}",
+                    "Type": "Basic",
+                    "Category": 0,
+                    "Edibility": -300,
+                    "Price": 250,
+                    "Texture": "Mods/{{ModId}}/Objects",
+                    "SpriteIndex": 22,
+                    "GeodeDrops": [
+                        {
+                            "Chance": 0.1,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "HighestValueSeeds",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 501",
+                            "MinStack": 1,
+                            "MaxStack": 1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false
+                        },
+                        {
+                            "Chance": 0.5,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "VeryHighValueSeeds",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 100 500",
+                            "MinStack": 1,
+                            "MaxStack": 1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false
+                        },
+                        {
+                            "Chance": 1.0,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "HighValueSeeds",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 76 99",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                //"RandomAmount": [5]
+                                "RandomAmount": [5]
+                            }],
+                            "StackModifierMode": "Stack"
+                        }
+                    ],
+                    "ArtifactSpotChances": null,
+                    "ContextTags": [
+                        "color_green"
+                    ],
+                    "CustomFields": {}
+                },
+                "{{ModId}}_SurpriseBoxFoodR": {
+                    "Name": "{{ModId}}_SurpriseBoxFoodR",
+                    "DisplayName": "{{i18n:object.SurpriseBoxFoodR.name}}",
+                    "Description": "{{i18n:object.SurpriseBox.description}}",
+                    "Type": "Basic",
+                    "Edibility": -300,
+                    "Price": 50,
+                    "Texture": "Mods/{{ModId}}/Objects",
+                    "SpriteIndex": 55,
+                    "GeodeDrops": [
+                        {
+                            "Chance": 0.01,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "R_Food_Iridium",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -7",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "QualityModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 4 // 1% chance for a iridium quality food
+                            }],
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 1
+                            }],
+                            "StackModifierMode": "Stack"
+                        },
+                        {
+                            "Chance": 0.05,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "R_Food_Gold",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -7",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "QualityModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 2 // 5% chance for a gold quality food
+                            }],
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 1
+                            }],
+                            "StackModifierMode": "Stack"
+                        },
+                        {
+                            "Chance": 0.1,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "R_Food_Silver",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -7",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "QualityModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 1 // 10% chance for a silver quality food
+                            }],
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 1
+                            }],
+                            "StackModifierMode": "Stack"
+                        },
+                        { 
+                            "Chance": 1.0,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "R_Food_NoQuality",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -7",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "QualityModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 0 // 100% chance for a 0 quality food
+                            }],
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 1
+                            }],
+                            "StackModifierMode": "Stack"
+                        }
+                    ],
+                    "ArtifactSpotChances": null,
+                    "ContextTags": [
+                        "color_orange"
+                    ],
+                    "CustomFields": {}
+                },
+                "{{ModId}}_SurpriseBoxFoodSR": {
+                    "Name": "{{ModId}}_SurpriseBoxFoodSR",
+                    "DisplayName": "{{i18n:object.SurpriseBoxFoodSR.name}}",
+                    "Description": "{{i18n:object.SurpriseBox.description}}",
+                    "Type": "Basic",
+                    "Edibility": -300,
+                    "Price": 100,
+                    "Texture": "Mods/{{ModId}}/Objects",
+                    "SpriteIndex": 56,
+                    "GeodeDrops": [
+                        {
+                            "Chance": 0.05,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "SR_Food_Iridium",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -7",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "QualityModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 4 // 5% chance for a iridium quality food
+                            }],
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 1
+                            }],
+                            "StackModifierMode": "Stack"
+                        },
+                        {
+                            "Chance": 0.1,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "SR_Food_Gold",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -7",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "QualityModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 2 // 10% chance for a gold quality food
+                            }],
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 1
+                            }],
+                            "StackModifierMode": "Stack"
+                        },
+                        {
+                            "Chance": 0.25,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "SR_Food_Silver",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -7",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "QualityModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 1 // 25% chance for a silver quality food
+                            }],
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 1
+                            }],
+                            "StackModifierMode": "Stack"
+                        },
+                        { 
+                            "Chance": 1.0,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "SR_Food_NoQuality",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -7",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "QualityModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 0 // 100% chance for a 0 quality food
+                            }],
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 1
+                            }],
+                            "StackModifierMode": "Stack"
+                        }
+                    ],
+                    "ArtifactSpotChances": null,
+                    "ContextTags": [
+                        "color_orange"
+                    ],
+                    "CustomFields": {}
+                },
+                "{{ModId}}_SurpriseBoxFoodSSR": {
+                    "Name": "{{ModId}}_SurpriseBoxFoodSSR",
+                    "DisplayName": "{{i18n:object.SurpriseBoxFoodSSR.name}}",
+                    "Description": "{{i18n:object.SurpriseBox.description}}",
+                    "Type": "Basic",
+                    "Edibility": -300,
+                    "Price": 250,
+                    "Texture": "Mods/{{ModId}}/Objects",
+                    "SpriteIndex": 57,
+                    "GeodeDrops": [
+                        {
+                            "Chance": 0.1,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "SSR_Food_Iridium",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -7",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "QualityModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 4 // 10% chance for a iridium quality food
+                            }],
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 1
+                            }],
+                            "StackModifierMode": "Stack"
+                        },
+                        {
+                            "Chance": 0.5,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "SSR_Food_Gold",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -7",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "QualityModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 2 // 50% chance for a gold quality food
+                            }],
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 1
+                            }],
+                            "StackModifierMode": "Stack"
+                        },
+                        {
+                            "Chance": 1.0,
+                            "SetFlagOnPickup": null,
+                            "Precedence": 0,
+                            "Condition": null,
+                            "Id": "SSR_Food_Silver",
+                            "ItemId": "RANDOM_ITEMS (O)",
+                            "PerItemCondition": "ITEM_CATEGORY Target -7",
+                            "MinStack": -1,
+                            "MaxStack": -1,
+                            "Quality": -1,
+                            "ObjectInternalName": null,
+                            "ObjectDisplayName": null,
+                            "ToolUpgradeLevel": -1,
+                            "IsRecipe": false,
+                            "QualityModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 1 // 100% chance for a silver quality food
+                            }],
+                            "StackModifiers": [{
+                                "Modification": "Set",
+                                "Amount": 1
+                            }],
+                            "StackModifierMode": "Stack"
+                        }
+                    ],
+                    "ArtifactSpotChances": null,
+                    "ContextTags": [
+                        "color_orange"
+                    ],
+                    "CustomFields": {}
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Tools",
+            "Entries": {
+                "{{ModId}}_HiddenIslandScepter": {
+                    "ClassName": "Wand",
+                    "Name": "{{ModId}}_HiddenIslandScepter",
+                    "AttachmentSlots": -1,
+                    "SalePrice": -1,
+                    "DisplayName": "{{i18n:object.HiddenIslandScepter.name}}",
+                    "Description": "{{i18n:object.HiddenIslandScepter.description}}",
+                    "Texture": "Mods/{{ModId}}/Objects",
+                    "SpriteIndex": 1,
+                    "MenuSpriteIndex": -1,
+                    "UpgradeLevel": -1,
+                    "ApplyUpgradeLevelToDisplayName": false,
+                    "ConventionalUpgradeFrom": null,
+                    "UpgradeFrom": null,
+                    "CanBeLostOnDeath": false,
+                    "SetProperties": {
+                        "InstantUse": true,
+                        "IsEfficient": true
+                    },
+                    "ModData": null,
+                    "CustomFields": {}
+                }
+            }
+        },
+        // add gift tastes
+        {
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "TextOperations": [{
+                "Operation": "Append",
+                "Target": ["Entries", "Universal_Hate"],
+                "Value": "{{ModId}}_HiddenIslandWarpTotem",
+                "Delimiter": " " // if there are already values, add a space between them and the new one
+            }]
+        },
+        // add crafting recipe for the totem
+        {
+            "Action": "EditData",
+            "Target": "Data/CraftingRecipes",
+            "Entries": {
+                "{{ModId}}_HiddenIslandWarpTotem": "769 1 768 1 709 1/Field/{{ModId}}_HiddenIslandWarpTotem/false/null"
+            }
+        }
+    ]
+}

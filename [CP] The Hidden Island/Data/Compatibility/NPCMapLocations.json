@@ -1,0 +1,43 @@
+{
+	"$schema": "https://smapi.io/schemas/content-patcher.json",
+	"Changes": [
+		{
+			"LogName": "Sprite Offsets",
+			"Action": "EditData",
+			"Target": "Mods/Bouhm.NPCMapLocations/NPCs",
+			"Entries": {
+				"WnS.Winnie": {
+					"MarkerCropOffset": 2
+				},
+				// "WnS.Solary": {
+				// 	"Exclude": true
+				// },
+			}
+		}
+		// TODO 
+		// {
+		// 	"LogName": "Sprite Offsets Default",
+		// 	"Action": "EditData",
+		// 	"Target": "Mods/Bouhm.NPCMapLocations/NPCs",
+		// 	"Entries": {
+		// 		"WnS.Winnie": {
+		// 			"Exclude": true // Default behavior, hide her from the mini map
+		// 		}
+		// 	}
+		// },
+		// {
+		// 	"LogName": "Sprite Offsets After Introduction Event",
+		// 	"Action": "EditData",
+		// 	"Target": "Mods/Bouhm.NPCMapLocations/NPCs",
+		// 	"Entries": {
+		// 		"WnS.Winnie": {
+		// 			"MarkerCropOffset": 2 // Only show her on the map after seen introduction event on Hidden Island
+		// 		}
+		// 	},
+		// 	"When": {
+		// 		"HasSeenEvent": "" // Insert that event ID here
+		// 	},
+		// },
+
+	]
+}

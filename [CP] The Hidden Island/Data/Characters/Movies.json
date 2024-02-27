@@ -1,0 +1,21 @@
+{
+    "Changes": [
+        {
+			"LogName": "Winnie Custom Movie Ticket Response Dialogue",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/WnS.Winnie",
+			"Entries": {
+				// Accept a movie invitation, base on current relationship with the player
+				"MovieInvitation": "{{i18n:dialogue.movie.{{TargetWithoutPath}}.MovieInvitation{{WnSWinnieRelationship}} |default={{i18n:dialogue.movie.{{TargetWithoutPath}}.MovieInvitation.Friendly}}}}",
+				// Invited by another player already
+				"RejectMovieTicket_AlreadyInvitedBySomeoneElse": "{{i18n:dialogue.movie.{{TargetWithoutPath}}.RejectMovieTicket_AlreadyInvitedBySomeoneElse}}",
+				// Watched a movie this week already
+				"RejectMovieTicket_AlreadyWatchedThisWeek": "{{i18n:dialogue.movie.{{TargetWithoutPath}}.RejectMovieTicket_AlreadyWatchedThisWeek}}",
+				// You divorced the NPC, so they won't accept gifts from you
+				"RejectMovieTicket_Divorced": "{{i18n:dialogue.movie.{{TargetWithoutPath}}.RejectGift_Divorced.{{Random: 1, 4}}}}",
+				// The movie data marks that NPC as unwilling to watch it - TODO set it horror movies
+				"RejectMovieTicket_DontWantToSeeThatMovie": "{{i18n:dialogue.movie.{{TargetWithoutPath}}.RejectMovieTicket_DontWantToSeeThatMovie}}",
+			}
+		}
+    ]
+}

@@ -1,0 +1,61 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                // WnSWFC = Winnie's Free Coffee
+                "{{ModId}}_LoopDayStartedTriggers": {
+                    "Id": "{{ModId}}_LoopDayStartedTriggers",
+                    "Trigger": "DayEnding",
+                    "Actions": [
+                        "MarkActionApplied Current {{ModId}}_ForgetWnSWFC false",
+                        "MarkActionApplied Current {{ModId}}_ForgetWnSWFCAnswers false",
+                        "MarkActionApplied Current {{ModId}}_LoopLoopDayStartedTriggers false"
+                    ]
+                },
+                "{{ModId}}_LoopLoopDayStartedTriggers": {
+                    "Id": "{{ModId}}_LoopLoopDayStartedTriggers",
+                    "Trigger": "DayEnding",
+                    "Actions": [
+                        "MarkActionApplied Current {{ModId}}_LoopDayStartedTriggers false"
+                    ]
+                },
+                "{{ModId}}_ForgetWnSWFC": {
+                    "Id": "{{ModId}}_ForgetWnSWFC",
+                    "Trigger": "DayEnding",
+                    "Condition": "PLAYER_HAS_MAIL Current WnSWFC",
+                    "Actions": [
+                        "RemoveMail Current WnSWFC all"
+                    ]
+                },
+                "{{ModId}}_ForgetWnSWFCAnswers": {
+                    "Id": "{{ModId}}_ForgetWnSWFCAnswers",
+                    "Trigger": "DayEnding",
+                    "Actions": [
+                        "MarkQuestionAnswered Current WnSBrewCoffeeToday false",
+                        "MarkQuestionAnswered Current WnSNotBrewCoffeeToday false",
+                        "MarkQuestionAnswered Current WnSWFCYes false",
+                        "MarkQuestionAnswered Current WnSWFCNo false"
+                    ]
+                },
+                "{{ModId}}_Send_HiddenIsland_EarlyInvitation": {
+                    "Id": "{{ModId}}_Send_HiddenIsland_EarlyInvitation",
+                    "Trigger": "DayEnding",
+                    "Condition": "PLAYER_HAS_SEEN_EVENT Current 112, PLAYER_HAS_SEEN_EVENT Current 100162, !PLAYER_HAS_MAIL Current {{ModId}}_HiddenIsland_Invitation", //seen event 112 and 100162 (Marlon's sword and Wizard's forest potion)
+                    "Actions": [
+                        "AddMail Current {{ModId}}_HiddenIsland_EarlyInvitation tomorrow" 
+                    ]
+                },
+                "{{ModId}}_Send_HiddenIsland_Invitation": {
+                    "Id": "{{ModId}}_Send_HiddenIsland_Invitation",
+                    "Trigger": "DayEnding",
+                    "Condition": "PLAYER_HAS_MAIL Current HasSkullKey, !PLAYER_HAS_MAIL Current {{ModId}}_HiddenIsland_EarlyInvitation",
+                    "Actions": [
+                        "AddMail Current {{ModId}}_HiddenIsland_Invitation tomorrow"
+                    ]
+                }
+            }
+        }
+    ]
+}

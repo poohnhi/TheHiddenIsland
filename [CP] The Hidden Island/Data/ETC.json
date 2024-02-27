@@ -1,0 +1,20 @@
+// Misc things
+{
+    "Changes": [
+        {
+            "LogName": "Add some bonus Emotes For Events",
+            "Action": "EditImage",
+            "Target": "TileSheets/emotes",
+            "FromFile": "Assets/Image/more_emotes.png",
+			"ToArea": { "X": 0, "Y": 512, "Width": 64, "Height": 64 }
+        },
+        {
+            "LogName": "Add text for sleeping pills",
+            "Action": "EditData",
+            "Target": "Strings/StringsFromCSFiles",
+            "Entries": {
+                "poohnhi.WnS.AskIfTakePill": "Take some {0}?"
+            }
+        }
+    ]
+}

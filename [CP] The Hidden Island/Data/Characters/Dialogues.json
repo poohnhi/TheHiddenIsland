@@ -1,0 +1,176 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "LogName": "Winnie's Dialogue",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/WnS.Winnie",
+            "Entries": {
+                // Daily dialogues
+                "{{WeekDay}}": "{{WnS.Winnie.Dialogue}}",
+
+                // Misc
+                // She catches the player digging through a trash can.
+                "DumpsterDiveComment": "{{i18n:dialogue.reaction.{{TargetWithoutPath}}.DumpsterDiveComment{{WnSWinnieRelationship}} |default:{{i18n:dialogue.reaction.{{TargetWithoutPath}}.DumpsterDiveComment}} }}",
+                // Get hit by slingshot
+                "HitBySlingshot": "{{i18n:dialogue.reaction.{{TargetWithoutPath}}.HitBySlingshot{{WnSWinnieRelationship}} |default:{{i18n:dialogue.reaction.{{TargetWithoutPath}}.HitBySlingshot}} }}",
+
+                // Bed tile interaction
+                "Winnie_Diary_Catch": "What are you doing? Stop it!",
+                "Winnie_Diary_Read": "$q WnSReadDiaryToday WnSBed_follow_up#There is something under the bed.#$r WnSCheckBedToday 0 WnSCheckBedTodayDialogueYes#Pull it out.#$r WnSCheckBedToday 0 WnSCheckBedTodayDialogueNo#Leave it there.",
+                "WnSCheckBedTodayDialogueYes": "%You decided to pull it out. It's a coffin.#$q WnSReadDiaryToday WnSBed_follow_up#What will you do with this coffin?#$r WnSCheckBedToday 0 WnSCheckCoffinTodayDialogueYes#Open the coffin.#$r WnSCheckBedToday 0 WnSCheckCoffinTodayDialogueNo#Put it back.",
+                "WnSCheckBedTodayDialogueNo": "%You decided to leave it there.",
+                "WnSCheckCoffinTodayDialogueYes": "%You decided to open the coffin.#$b#%Oh. Inside it is a small little notebook with the word \"Diary\" on its cover.#$q WnSReadDiaryToday WnSBed_follow_up#What will you do with this diary?#$r WnSReadDiaryToday 0 WnSReadDiaryTodayDialogueYes#Read the diary.#$r WnSCheckBedToday 0 WnSReadDiaryTodayDialogueNo#Put it back.",
+                "WnSCheckCoffinTodayDialogueNo": "%No way you are going to open that.",
+                "WnSReadDiaryTodayDialogueYes": "%The writing is a little bit messy but you still can read it. The latest entry is from last year, Summer 28.#$b#%It said: \"Today is our birthday. I was looking forward to this for a whole year, but... Solary was too busy. He said he cannot go home this week to celebrate it with me...\"#$b#%\"It hurts. If I know having to celebrate a lonely birthday could be this hurt, I would had wish I never have a birthday.\"",
+                "WnSReadDiaryTodayDialogueNo": "%You wanted to respect this diary owner's privacy, so you put it back.",
+                "WnSBed_follow_up": "%You decided to not trying to snoop more than you already did."
+            }
+        },
+        {
+            "LogName": "Winnie's Dialogue",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/WnS.Winnie",
+            "Entries": {
+                // Morning coffees response
+                "WnSWFC_yes": "{{i18n:schedule.string.WnS.Winnie.MorningCoffee.Give.{{Random:{{Range:1, 5}}}}|WnSWinnieMorningCoffeeChoice={{WnSWinnieMorningCoffeeChoice}}}}",
+                "WnSWFC_no": "{{i18n:schedule.string.WnS.Winnie.MorningCoffee.Denied.{{Random:{{Range:1, 2}}}}}}",
+                "WnSWFC_old": "{{i18n:schedule.string.WnS.Winnie.MorningCoffee.AlreadyGive.{{Random:{{Range:1, 7}}}}}}",
+
+                // Season start and end
+                "spring_1": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.spring_1}}",
+                "spring_28": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.spring_28}}",
+                "summer_1": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.summer_1}}",
+                "summer_28": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.summer_28}}", // this is also her birthday
+                "fall_1": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.fall_1}}",
+                "fall_28": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.fall_28}}",
+                "winter_1": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.winter_1}}",
+                "winter_28": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.winter_28}}",
+                
+                // Dialogues for day before the festival
+                "spring_12": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.spring_12}}",
+                "spring_23": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.spring_23}}",
+                "summer_10": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.summer_10}}",
+                "summer_27": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.summer_27}}", // this is also the day before her birthday
+                "fall_15": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.fall_15}}",
+                "fall_26": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.fall_26}}",
+                "winter_7": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.winter_7}}",
+                "winter_14": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.winter_14}}",
+                "winter_24": "{{i18n:dialogue.daily.{{TargetWithoutPath}}.winter_24}}",
+
+                // Ice festival - before visiting
+                "winter_15": "{{i18n:dialogue.festival.{{TargetWithoutPath}}.winter_15}}",
+                "winter_16": "{{i18n:dialogue.festival.{{TargetWithoutPath}}.winter_16}}",
+                "winter_17": "{{i18n:dialogue.festival.{{TargetWithoutPath}}.winter_17}}",
+            },
+            "When": {
+                "HasFlag: currentPlayer|contains=WnSWinnieWipedMemoryAttempt": false,
+            }
+        },
+        {
+            "LogName": "Winnie's Dialogue Stay Divorced",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/WnS.Winnie",
+            "Entries": {
+                // Daily dialogues
+                "{{WeekDay}}": "{{i18n:dialogue.daily.insane.{{TargetWithoutPath}}.Divorced.{{Random: 1, 7}}}}",
+                "RejectItem_(O)809": "{{i18n:dialogue.movie.{{TargetWithoutPath}}.RejectGift_Divorced.{{Random: 1, 4}}}}", 
+                "RejectItem_(O)460": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectMermaidPendant_Divorced}}",
+                "RejectItem_(O)458": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectBouquet_Divorced.{{Random: 1, 4}}}}",
+            },
+            "When": {
+                "HasFlag: currentPlayer|contains=WnSWinnieWipedMemoryAttemptTalkedToAfterWiped": true,
+                "HasFlag: currentPlayer|contains=WnSWinnieWipedMemoryAttempt": true,
+            }
+        },
+        {
+            "LogName": "Winnie's Dialogue Trigger Once only",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/WnS.Winnie",
+            "Entries": {
+                // Daily dialogues
+                "{{WeekDay}}": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.WipedMemory}}",
+            },
+            "When": {
+                "HasFlag: currentPlayer|contains=WnSWinnieWipedMemoryAttemptTalkedToAfterWiped": false,
+                "HasFlag: currentPlayer|contains=WnSWinnieWipedMemoryAttempt": true,
+            }
+        },
+        {
+            "LogName": "Winnie's Relationship Related Dialogue",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/WnS.Winnie",
+            "Entries": {
+                // Dating
+                // When she accept a bouquet from the player and start dating
+                "AcceptBouquet": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.AcceptBouquet}}",
+                // Reject bouquet when player divorced her
+                "RejectBouquet_Divorced": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectBouquet_Divorced.{{Random: 1, 4}}}}",
+                // If platonic is on, she'll be undatable and say this line
+                "RejectBouquet_NotDatable": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectBouquet_NotDatable}}",
+                // She is already married to another player, use {0} to refer that player name
+                "RejectBouquet_NpcAlreadyMarried": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectBouquet_NpcAlreadyMarried}}",
+                // You have less than 4 hearts with her.
+                "RejectBouquet_VeryLowHearts": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectBouquet_VeryLowHearts}}",
+                // You have less than 8 hearts with her.
+                "RejectBouquet_LowHearts": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectBouquet_LowHearts}}",
+                // If all the above not exist
+                "RejectBouquet": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectBouquet}}",
+                // Broken up with by giving them a Wilted Bouquet.
+                "breakUp": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.breakUp}}",
+
+                // Married
+                // Speak to divorced spouse.	
+                "divorced": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.divorced}}",
+                // Reject all gifts when the player divorced her
+                "RejectGift_Divorced": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectGift_Divorced.{{Random: 1, 4}}}}",
+                // RejectItem: Go to CustomGiftDialogue
+                "RejectMermaidPendant_Divorced": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectMermaidPendant_Divorced}}",
+                "RejectMermaidPendant_NeedHouseUpgrade": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectMermaidPendant_NeedHouseUpgrade}}",
+                "RejectMermaidPendant_NotDatable": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectMermaidPendant_NotDatable}}",
+                "RejectMermaidPendant_NpcWithSomeoneElse": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectMermaidPendant_NpcWithSomeoneElse}}",
+                "RejectMermaidPendant_PlayerWithSomeoneElse": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectMermaidPendant_PlayerWithSomeoneElse}}",
+                "RejectMermaidPendant_Under8Hearts": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectMermaidPendant_Under8Hearts}}",
+                "RejectMermaidPendant_Under10Hearts": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectMermaidPendant_Under10Hearts}}",
+                "RejectMermaidPendant_Under10Hearts_AskedAgain": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectMermaidPendant_Under10Hearts_AskedAgain}}",
+                "RejectMermaidPendant": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.RejectMermaidPendant}}",
+
+                // Shown by an NPC spouse when they couldn't pathfind to their kitchen standing spot in the farmhouse.
+                "SpouseFarmhouseClutter": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.SpouseFarmhouseClutter}}",
+                // Shown by an NPC spouse when they're in the farmhouse and there's a monster close to them.
+                "Spouse_MonstersInHouse": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.Spouse_MonstersInHouse}}",
+                // Shown by an NPC spouse when you gave a gift to another eligible NPC of the same gender as your spouse (unless it's their birthday). You can use {0} in the dialogue for the other NPC's name, and {1} for the gifted item name.
+                "SpouseGiftJealous": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.SpouseGiftJealous}}",
+                // Shown when receiving the stardrop from your spouse.
+                "SpouseStardrop": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.SpouseStardrop}}",
+                // Player try to wipe Winnie memory, trigger one of the possible bad ending (only with crazy config)
+                "WipedMemory": "{{i18n:dialogue.relationship.{{TargetWithoutPath}}.WipedMemory}}",
+            }
+        },
+        {
+            "LogName": "Winnie's Engaged Dialogue",
+            "Action": "EditData",
+            "Target": "Data/EngagementDialogue",
+            "Entries": {
+                // This one trigger when talked to when engaged, but not married
+                // The roommate0 will override spouse one, so keep that on a When condition for platonic
+                // "WnS.WinnieRoommate0": "I still can't believe I'm moving in with my best friend! Thanks for making me so happy, @.",
+                // "WnS.WinnieRoommate1": "Are you excited? Because I am! I just need to prepare for the big event.",
+                "WnS.Winnie0": "I'm starting to think that I'm not mentally prepared enough for this kind of event...$15#$b#The wait is killing me.$14",
+                "WnS.Winnie1": "I may not look like it, but I'm really excited.$4#$b#I hope you know that I love you.$11"
+            }
+        },
+        {
+            "LogName": "Winnie's Response to Marriage Dialogue",
+            "Action": "EditData",
+            "Target": "Strings/StringsFromCSFiles",
+            "Entries": {
+                // This one trigger when accept the mermaid pendant
+                "WnS.Winnie_Engaged": "...!!!$17#$b#Yes!!!$11#I mean... You're asking me to marry you?$14#$b#Well, I supposed I will agree. Hehe.$10",
+                "WnS.Winnie_EngagedRoommate": "You want us to live together as life partners? Of course!",
+                // After the wedding event
+                "WnS.Winnie_AfterWedding": "Feels kinda weird celebrating my wedding in front of a bunch of mostly strangers.$15#$b#It's gonna take me a long time to open up and get used to the farm life.$19",
+            }
+        },
+    ]
+}
