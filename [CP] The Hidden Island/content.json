@@ -270,15 +270,15 @@
         },
         {
             "Name": "CGD.WnS.Winnie.LikedAppreciate",
-            "Value": "#$b#{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.{{Random: \"\", {{Range:1, 6}}}} |default={{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate}}}}$11"
+            "Value": "#$b#{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.{{Random: \"\", {{Range:1, 6}}}} |default={{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate}}}}"
         },
         {
             "Name": "CGD.WnS.Winnie.LovedAppreciate",
-            "Value": "#$b#{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.{{Random: \"\", {{Range:1, 6}}}} |default={{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate}}}}$11"
+            "Value": "#$b#{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.{{Random: \"\", {{Range:1, 6}}}} |default={{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate}}}}"
         },
         {
             "Name": "CGD.WnS.Winnie.LovedAppreciate",
-            "Value": "#$b#{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Loved_Appreciate.{{Random: \"\", {{Range:1, 8}}}} |default={{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Loved_Appreciate}}}}$11",
+            "Value": "#$b#{{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Loved_Appreciate.{{Random: \"\", {{Range:1, 8}}}} |default={{i18n:dialogue.gift.WnS.Winnie.AcceptGift_Loved_Appreciate}}}}",
             "When": {
                 "Query: {{Random: 1, 10}} > 3": true // 70% rate of using loved appreciate as thank you, 30% of liked appreciate
             }
