@@ -346,7 +346,7 @@
 
     // Like
 
-    "dialogue.gift.WnS.Winnie.AcceptGift_Triple_Shot_Espresso": "Oh, that looks like some heavy stuff. Don't mind me when I add some milk to this.$11#$b#It'll probably make me stay awake for the next 18 hours.$30",
+    "dialogue.gift.WnS.Winnie.AcceptGift_Triple_Shot_Espresso": "Oh, that looks like some heavy stuff. Don't mind me when I add some milk to this.$11#$b#It'll probably make me stay awake for the next 18 hours.$14",
     "dialogue.gift.WnS.Winnie.AcceptGift_Coffee": "You know, normal coffee is too bitter for me. I couldn't drink coffee without adding some milk to it.$1#$b#You should try it sometimes. It's delicious!$11",
     "dialogue.gift.WnS.Winnie.AcceptGift_Squid": "Since you brought it to me, I'm going to make some fried calamari later.$21#$b#It's my favorite dish!$32",
     "dialogue.gift.WnS.Winnie.AcceptGift_Midnight_Squid": "Wow, that's a funny looking squid. Do you think it's edible?$32",
@@ -356,13 +356,13 @@
     "dialogue.gift.WnS.Winnie.AcceptGift_Void_Essence.1": "Last time when a shadow person give me this, I gave them some homemade void mayo back. They seem to like it.$21%revealtaste Krobus 308",
     "dialogue.gift.WnS.Winnie.AcceptGift_Green_Tea": "A nice cup of green tea would be a nice substitute to coffee every once in a while...$30",
 
-    "dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate": "Thank you so much, @.",
-    "dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.1": "Thank you.",
-    "dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.2": "Thank you so much!",
-    "dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.3": "Thanks, @.",
-    "dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.4": "Thank you so much for this one, @!",
-    "dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.5": "Thank you!",
-    "dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.6": "Thanks a lot, @.",
+    "dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate": "Thank you so much, @.$30",
+    "dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.1": "Thank you.$1",
+    "dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.2": "Thank you so much!$11",
+    "dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.3": "Thanks, @.$1",
+    "dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.4": "Thank you so much for this one, @!$11",
+    "dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.5": "Thank you!$30",
+    "dialogue.gift.WnS.Winnie.AcceptGift_Liked_Appreciate.6": "Thanks a lot, @.$30",
 
     // Neutral
 

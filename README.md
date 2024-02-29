@@ -14,3 +14,9 @@
 ## What to be expected in the future?
 - Working NPCs with a storyline full of events and choices.
 - (Hopefully) A lot of fun experiences.
+
+## Bug report
+- Feel free to report bugs to me!
+
+## Known issues/bugs
+- This specific type of surprise boxes are overpower/worthless: As long as alpha testers give me feedback/suggestions, I'll try to balance it. 

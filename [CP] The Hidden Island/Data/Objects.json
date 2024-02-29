@@ -54,104 +54,113 @@
                     "Price": 50,
                     "Texture": "Mods/{{ModId}}/Objects",
                     "SpriteIndex": 20,
-                    "GeodeDrops": [
-                        {
+                    "GeodeDrops": [{
                             "Chance": 0.01,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
                             "Id": "HighestValueSeeds",
                             "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 501",
-                            "MinStack": 1,
-                            "MaxStack": 1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, poohnhi.PoohCore_HARVEST_ITEM_PRICE Target 200",
+                            "StackModifiers": [{
+                                    "Modification": "Set",
+                                    "Amount": 5,
+                                    "Condition": "RANDOM 0.05 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 4,
+                                    "Condition": "RANDOM 0.1 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 3,
+                                    "Condition": "RANDOM 0.25 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "RandomAmount": [1, 2]
+                                }
+                            ],
+                            "StackModifierMode": "Maximum"
                         },
                         {
                             "Chance": 0.05,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
-                            "Id": "VeryHighValueSeeds",
-                            "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 100 500",
-                            "MinStack": 1,
-                            "MaxStack": 1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false
-                        },
-                        {
-                            "Chance": 0.1,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
                             "Id": "HighValueSeeds",
                             "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 76 99",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, poohnhi.PoohCore_HARVEST_ITEM_PRICE Target 100 199",
                             "StackModifiers": [{
-                                "Modification": "Set",
-                                //"RandomAmount": [5]
-                                "RandomAmount": [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 5]
-                            }],
-                            "StackModifierMode": "Stack"
+                                    "Modification": "Set",
+                                    "Amount": 20,
+                                    "Condition": "RANDOM 0.05 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 15,
+                                    "Condition": "RANDOM 0.1 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 10,
+                                    "Condition": "RANDOM 0.25 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "RandomAmount": [1, 2, 3, 4, 5]
+                                }
+                            ],
+                            "StackModifierMode": "Maximum"
                         },
                         {
                             "Chance": 0.25,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
                             "Id": "MidValueSeeds",
                             "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 26 75",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, poohnhi.PoohCore_HARVEST_ITEM_PRICE Target 60 99",
                             "StackModifiers": [{
-                                "Modification": "Set",
-                                //"RandomAmount": [10]
-                                "RandomAmount": [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-                            }],
-                            "StackModifierMode": "Stack"
+                                    "Modification": "Set",
+                                    "Amount": 20,
+                                    "Condition": "RANDOM 0.05 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 15,
+                                    "Condition": "RANDOM 0.1 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 10,
+                                    "Condition": "RANDOM 0.25 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "RandomAmount": [1, 2, 3, 4, 5]
+                                }
+                            ],
+                            "StackModifierMode": "Maximum"
                         },
                         {
                             "Chance": 1.0,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
                             "Id": "LowValueSeeds",
                             "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 0 25, !ITEM_ID Target (O)890",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, poohnhi.PoohCore_HARVEST_ITEM_PRICE Target 0 59, !ITEM_ID Target (O)890",
                             "StackModifiers": [{
-                                "Modification": "Set",
-                                //"RandomAmount": [20]
-                                "RandomAmount": [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 6, 7, 8, 9, 10, 15, 20]
-                            }],
-                            "StackModifierMode": "Stack"
+                                    "Modification": "Set",
+                                    "Amount": 20,
+                                    "Condition": "RANDOM 0.05 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 15,
+                                    "Condition": "RANDOM 0.1 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 10,
+                                    "Condition": "RANDOM 0.25 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "RandomAmount": [1, 2, 3, 4, 5]
+                                }
+                            ],
+                            "StackModifierMode": "Maximum"
                         }
                     ],
                     "ArtifactSpotChances": null,
@@ -173,101 +182,111 @@
                     "GeodeDrops": [
                         {
                             "Chance": 0.02,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
                             "Id": "HighestValueSeeds",
                             "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 501",
-                            "MinStack": 1,
-                            "MaxStack": 1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, poohnhi.PoohCore_HARVEST_ITEM_PRICE Target 200",
+                            "StackModifiers": [{
+                                    "Modification": "Set",
+                                    "Amount": 5,
+                                    "Condition": "RANDOM 0.1 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 4,
+                                    "Condition": "RANDOM 0.2 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 3,
+                                    "Condition": "RANDOM 0.5 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "RandomAmount": [1, 2]
+                                }
+                            ],
+                            "StackModifierMode": "Maximum"
                         },
                         {
                             "Chance": 0.1,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
-                            "Id": "VeryHighValueSeeds",
-                            "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 100 500",
-                            "MinStack": 1,
-                            "MaxStack": 1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false
-                        },
-                        {
-                            "Chance": 0.2,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
                             "Id": "HighValueSeeds",
                             "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 76 99",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, poohnhi.PoohCore_HARVEST_ITEM_PRICE Target 100 199",
                             "StackModifiers": [{
-                                "Modification": "Set",
-                                //"RandomAmount": [5]
-                                "RandomAmount": [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 5]
-                            }],
-                            "StackModifierMode": "Stack"
+                                    "Modification": "Set",
+                                    "Amount": 20,
+                                    "Condition": "RANDOM 0.1 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 15,
+                                    "Condition": "RANDOM 0.2 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 10,
+                                    "Condition": "RANDOM 0.5 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "RandomAmount": [1, 2, 3, 4, 5]
+                                }
+                            ],
+                            "StackModifierMode": "Maximum"
                         },
                         {
                             "Chance": 0.5,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
                             "Id": "MidValueSeeds",
                             "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 26 75",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, poohnhi.PoohCore_HARVEST_ITEM_PRICE Target 60 99",
                             "StackModifiers": [{
-                                "Modification": "Set",
-                                //"RandomAmount": [10]
-                                "RandomAmount": [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-                            }],
-                            "StackModifierMode": "Stack"
+                                    "Modification": "Set",
+                                    "Amount": 20,
+                                    "Condition": "RANDOM 0.1 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 15,
+                                    "Condition": "RANDOM 0.2 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 10,
+                                    "Condition": "RANDOM 0.5 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "RandomAmount": [1, 2, 3, 4, 5]
+                                }
+                            ],
+                            "StackModifierMode": "Maximum"
                         },
                         {
                             "Chance": 1.0,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
                             "Id": "LowValueSeeds",
                             "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 0 25, !ITEM_ID Target (O)890",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, poohnhi.PoohCore_HARVEST_ITEM_PRICE Target 0 59, !ITEM_ID Target (O)890",
                             "StackModifiers": [{
-                                "Modification": "Set",
-                                //"RandomAmount": [20]
-                                "RandomAmount": [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 6, 7, 8, 9, 10, 15, 20]
-                            }],
-                            "StackModifierMode": "Stack"
+                                    "Modification": "Set",
+                                    "Amount": 20,
+                                    "Condition": "RANDOM 0.1 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 15,
+                                    "Condition": "RANDOM 0.2 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 10,
+                                    "Condition": "RANDOM 0.5 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "RandomAmount": [1, 2, 3, 4, 5]
+                                }
+                            ],
+                            "StackModifierMode": "Maximum"
                         }
                     ],
                     "ArtifactSpotChances": null,
@@ -286,60 +305,86 @@
                     "Price": 250,
                     "Texture": "Mods/{{ModId}}/Objects",
                     "SpriteIndex": 22,
-                    "GeodeDrops": [
-                        {
+                    "GeodeDrops": [{
                             "Chance": 0.1,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
                             "Id": "HighestValueSeeds",
                             "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 501",
-                            "MinStack": 1,
-                            "MaxStack": 1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, poohnhi.PoohCore_HARVEST_ITEM_PRICE Target 200",
+                            "StackModifiers": [{
+                                    "Modification": "Set",
+                                    "Amount": 5,
+                                    "Condition": "RANDOM 0.1 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 4,
+                                    "Condition": "RANDOM 0.2 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 3,
+                                    "Condition": "RANDOM 0.3 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "RandomAmount": [1, 2]
+                                }
+                            ],
+                            "StackModifierMode": "Maximum"
                         },
                         {
                             "Chance": 0.5,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
-                            "Id": "VeryHighValueSeeds",
+                            "Id": "HighValueSeeds",
                             "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 100 500",
-                            "MinStack": 1,
-                            "MaxStack": 1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, poohnhi.PoohCore_HARVEST_ITEM_PRICE Target 100 199",
+                            "StackModifiers": [{
+                                    "Modification": "Set",
+                                    "Amount": 20,
+                                    "Condition": "RANDOM 0.1 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 15,
+                                    "Condition": "RANDOM 0.2 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 10,
+                                    "Condition": "RANDOM 0.3 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 5
+                                }
+                            ],
+                            "StackModifierMode": "Maximum"
                         },
                         {
                             "Chance": 1.0,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
-                            "Id": "HighValueSeeds",
+                            "Id": "MidValueSeeds",
                             "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -74, ITEM_PRICE Target 76 99",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
+                            "PerItemCondition": "ITEM_CATEGORY Target -74, poohnhi.PoohCore_HARVEST_ITEM_PRICE Target 60 99",
                             "StackModifiers": [{
-                                "Modification": "Set",
-                                //"RandomAmount": [5]
-                                "RandomAmount": [5]
-                            }],
-                            "StackModifierMode": "Stack"
+                                    "Modification": "Set",
+                                    "Amount": 20,
+                                    "Condition": "RANDOM 0.05 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 15,
+                                    "Condition": "RANDOM 0.1 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 10,
+                                    "Condition": "RANDOM 0.25 @addDailyLuck"
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 5
+                                }
+                            ],
+                            "StackModifierMode": "Maximum"
                         }
                     ],
                     "ArtifactSpotChances": null,
@@ -359,99 +404,32 @@
                     "SpriteIndex": 55,
                     "GeodeDrops": [
                         {
-                            "Chance": 0.01,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
-                            "Id": "R_Food_Iridium",
-                            "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -7",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
-                            "QualityModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 4 // 1% chance for a iridium quality food
-                            }],
-                            "StackModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 1
-                            }],
-                            "StackModifierMode": "Stack"
-                        },
-                        {
-                            "Chance": 0.05,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
-                            "Id": "R_Food_Gold",
-                            "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -7",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
-                            "QualityModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 2 // 5% chance for a gold quality food
-                            }],
-                            "StackModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 1
-                            }],
-                            "StackModifierMode": "Stack"
-                        },
-                        {
-                            "Chance": 0.1,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
-                            "Id": "R_Food_Silver",
-                            "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -7",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
-                            "QualityModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 1 // 10% chance for a silver quality food
-                            }],
-                            "StackModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 1
-                            }],
-                            "StackModifierMode": "Stack"
-                        },
-                        { 
                             "Chance": 1.0,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
-                            "Id": "R_Food_NoQuality",
+                            "Id": "Random_Food",
                             "ItemId": "RANDOM_ITEMS (O)",
                             "PerItemCondition": "ITEM_CATEGORY Target -7",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
-                            "QualityModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 0 // 100% chance for a 0 quality food
-                            }],
+                            "QualityModifiers": [
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 4,
+                                    "Condition": "RANDOM 0.01 @addDailyLuck" // 1% chance for a iridium quality food
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 2, 
+                                    "Condition": "RANDOM 0.05 @addDailyLuck" // 5% chance for a gold quality food
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 1, 
+                                    "Condition": "RANDOM 0.1 @addDailyLuck" // 10% chance for a silver quality food
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 0 // 100% chance for a 0 quality food
+                                }
+                            ],
+                            "QualityModifierMode": "Maximum",
                             "StackModifiers": [{
                                 "Modification": "Set",
                                 "Amount": 1
@@ -476,99 +454,32 @@
                     "SpriteIndex": 56,
                     "GeodeDrops": [
                         {
-                            "Chance": 0.05,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
-                            "Id": "SR_Food_Iridium",
-                            "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -7",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
-                            "QualityModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 4 // 5% chance for a iridium quality food
-                            }],
-                            "StackModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 1
-                            }],
-                            "StackModifierMode": "Stack"
-                        },
-                        {
-                            "Chance": 0.1,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
-                            "Id": "SR_Food_Gold",
-                            "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -7",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
-                            "QualityModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 2 // 10% chance for a gold quality food
-                            }],
-                            "StackModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 1
-                            }],
-                            "StackModifierMode": "Stack"
-                        },
-                        {
-                            "Chance": 0.25,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
-                            "Id": "SR_Food_Silver",
-                            "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -7",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
-                            "QualityModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 1 // 25% chance for a silver quality food
-                            }],
-                            "StackModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 1
-                            }],
-                            "StackModifierMode": "Stack"
-                        },
-                        { 
                             "Chance": 1.0,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
-                            "Id": "SR_Food_NoQuality",
+                            "Id": "Random_Food",
                             "ItemId": "RANDOM_ITEMS (O)",
                             "PerItemCondition": "ITEM_CATEGORY Target -7",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
-                            "QualityModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 0 // 100% chance for a 0 quality food
-                            }],
+                            "QualityModifiers": [
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 4,
+                                    "Condition": "RANDOM 0.05 @addDailyLuck" // 5% chance for a iridium quality food
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 2, 
+                                    "Condition": "RANDOM 0.1 @addDailyLuck" // 10% chance for a gold quality food
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 1, 
+                                    "Condition": "RANDOM 0.25 @addDailyLuck" // 25% chance for a silver quality food
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 0 // 100% chance for a 0 quality food
+                                }
+                            ],
+                            "QualityModifierMode": "Maximum",
                             "StackModifiers": [{
                                 "Modification": "Set",
                                 "Amount": 1
@@ -593,74 +504,27 @@
                     "SpriteIndex": 57,
                     "GeodeDrops": [
                         {
-                            "Chance": 0.1,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
-                            "Id": "SSR_Food_Iridium",
-                            "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -7",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
-                            "QualityModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 4 // 10% chance for a iridium quality food
-                            }],
-                            "StackModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 1
-                            }],
-                            "StackModifierMode": "Stack"
-                        },
-                        {
-                            "Chance": 0.5,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
-                            "Id": "SSR_Food_Gold",
-                            "ItemId": "RANDOM_ITEMS (O)",
-                            "PerItemCondition": "ITEM_CATEGORY Target -7",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
-                            "QualityModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 2 // 50% chance for a gold quality food
-                            }],
-                            "StackModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 1
-                            }],
-                            "StackModifierMode": "Stack"
-                        },
-                        {
                             "Chance": 1.0,
-                            "SetFlagOnPickup": null,
-                            "Precedence": 0,
-                            "Condition": null,
-                            "Id": "SSR_Food_Silver",
+                            "Id": "Random_Food",
                             "ItemId": "RANDOM_ITEMS (O)",
                             "PerItemCondition": "ITEM_CATEGORY Target -7",
-                            "MinStack": -1,
-                            "MaxStack": -1,
-                            "Quality": -1,
-                            "ObjectInternalName": null,
-                            "ObjectDisplayName": null,
-                            "ToolUpgradeLevel": -1,
-                            "IsRecipe": false,
-                            "QualityModifiers": [{
-                                "Modification": "Set",
-                                "Amount": 1 // 100% chance for a silver quality food
-                            }],
+                            "QualityModifiers": [
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 4,
+                                    "Condition": "RANDOM 0.1 @addDailyLuck" // 10% chance for a iridium quality food
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 2, 
+                                    "Condition": "RANDOM 0.5 @addDailyLuck" // 50% chance for a gold quality food
+                                },
+                                {
+                                    "Modification": "Set",
+                                    "Amount": 1 // 100% chance for a silver quality food
+                                }
+                            ],
+                            "QualityModifierMode": "Maximum",
                             "StackModifiers": [{
                                 "Modification": "Set",
                                 "Amount": 1

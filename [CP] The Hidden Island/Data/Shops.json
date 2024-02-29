@@ -46,11 +46,20 @@
                       ], // a list of context tags for item which the player can sell to this shop
                     "Items": [
                         {
-                            "Price": 200, // price of this item
-                            "AvailableStock": 1, // can buy 1 a day
+                            "Price": 2000, // price of this item
+                            "AvailableStock": 1, // can buy 1 a week
                             "AvailableStockLimit": "Player", // limit applies to each player separately
-                            "Id": "(O){{ModId}}_SurpriseBoxSeedsR",
-                            "ItemId": "(O){{ModId}}_SurpriseBoxSeedsR",
+                            "Id": "(O){{ModId}}_SurpriseBoxSeedsSSR",
+                            "ItemId": "(O){{ModId}}_SurpriseBoxSeedsSSR",
+                            "Condition": "DAY_OF_WEEK Monday Wednesday Friday Sunday"
+                        },
+                        {
+                            "Price": 4000, // price of this item
+                            "AvailableStock": 1, // can buy 1 a week
+                            "AvailableStockLimit": "Player", // limit applies to each player separately
+                            "Id": "(O){{ModId}}_SurpriseBoxFoodSSR",
+                            "ItemId": "(O){{ModId}}_SurpriseBoxFoodSSR",
+                            "Condition": "DAY_OF_WEEK Tuesday Thursday Saturday"
                         },
                         {
                             "Price": 500, // price of this item
@@ -60,12 +69,26 @@
                             "ItemId": "(O){{ModId}}_SurpriseBoxSeedsSR",
                         },
                         {
-                            "Price": 2000, // price of this item
+                            "Price": 1000, // price of this item
                             "AvailableStock": 1, // can buy 1 a day
                             "AvailableStockLimit": "Player", // limit applies to each player separately
-                            "Id": "(O){{ModId}}_SurpriseBoxSeedsSSR",
-                            "ItemId": "(O){{ModId}}_SurpriseBoxSeedsSSR",
-                        }
+                            "Id": "(O){{ModId}}_SurpriseBoxFoodSR",
+                            "ItemId": "(O){{ModId}}_SurpriseBoxFoodSR",
+                        },
+                        {
+                            "Price": 250, // price of this item
+                            "AvailableStock": 5, // can buy 1 a day
+                            "AvailableStockLimit": "Player", // limit applies to each player separately
+                            "Id": "(O){{ModId}}_SurpriseBoxSeedsR",
+                            "ItemId": "(O){{ModId}}_SurpriseBoxSeedsR",
+                        },
+                        {
+                            "Price": 500, // price of this item
+                            "AvailableStock": 5, // can buy 1 a day
+                            "AvailableStockLimit": "Player", // limit applies to each player separately
+                            "Id": "(O){{ModId}}_SurpriseBoxFoodR",
+                            "ItemId": "(O){{ModId}}_SurpriseBoxFoodR",
+                        },
                     ],
                     "CustomFields": {},
                 }
