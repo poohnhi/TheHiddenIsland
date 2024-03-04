@@ -7,24 +7,6 @@
             "Action": "EditData",
             "Target": "Data/Characters",
             "Entries": {
-                "{{ModId}}_InvisibleTempActor": {
-                    "DisplayName": "InvisibleTempActor",
-                    "SocialTab": "HiddenAlways",
-                    "CanSocialize": "FALSE",
-                    "IntroductionsQuest": false,
-                    "PerfectionScore": false,
-                    "EndSlideShow": "Hidden",
-                    "Home": [{
-                        "Id": "WinnieHome",
-                        "Location": "{{ModId}}_House",
-                        "Tile": {
-                            "X": 27,
-                            "Y": 36
-                        },
-                        "Direction": "Up"
-                    }],
-                    "Breather": false,
-                },
                 "WnS.Winnie": {
                     // TODO Add When HasSeen:Introduction event here
                     // Basic infos
@@ -73,6 +55,70 @@
                         "Direction": "Up"
                     }],
                     "Breather": true,
+                },
+                "WnS.Solary": {
+                    "DisplayName": "{{i18n:character.WnS.Solary.DisplayName}}",
+                    "SocialTab": "HiddenAlways",
+                    "CanSocialize": true,
+                    "CanBeRomanced": false,
+                    "CanReceiveGifts": false,
+                    "CanCommentOnPurchasedShopItems": false,
+                    "CanGreetNearbyCharacters": false,
+                    "CanVisitIsland": false,
+                    "Calendar": "HiddenAlways", // change to AlwaysShown if first birthday event for Winnie
+                    "PerfectionScore": false,
+                    "EndSlideShow": "Hidden",
+                    "Home": [{
+                        "Id": "Home",
+                        "Location": "BusStop",
+                        "Tile": {
+                            "X": 7,
+                            "Y": 22
+                        },
+                        "Direction": "Down"
+                    }],
+                    "Breather": true,
+                },
+                "WnS.Xavi": {
+                    "DisplayName": "{{i18n:character.WnS.Xavi.DisplayName}}",
+                    "SocialTab": "HiddenAlways",
+                    "CanSocialize": true,
+                    "CanBeRomanced": false,
+                    "CanReceiveGifts": false,
+                    "CanCommentOnPurchasedShopItems": false,
+                    "CanGreetNearbyCharacters": false,
+                    "CanVisitIsland": false,
+                    "Calendar": "HiddenAlways", // change to AlwaysShown if first birthday event for Winnie
+                    "PerfectionScore": false,
+                    "EndSlideShow": "Hidden",
+                    "Home": [{
+                        "Id": "Home",
+                        "Location": "BusStop",
+                        "Tile": {
+                            "X": 6,
+                            "Y": 22
+                        },
+                        "Direction": "Down"
+                    }],
+                    "Breather": true,
+                },
+                "{{ModId}}_InvisibleTempActor": {
+                    "DisplayName": "Choices",
+                    "SocialTab": "HiddenAlways",
+                    "CanSocialize": "FALSE",
+                    "IntroductionsQuest": false,
+                    "PerfectionScore": false,
+                    "EndSlideShow": "Hidden",
+                    "Home": [{
+                        "Id": "WinnieHome",
+                        "Location": "{{ModId}}_House",
+                        "Tile": {
+                            "X": 27,
+                            "Y": 36
+                        },
+                        "Direction": "Up"
+                    }],
+                    "Breather": false,
                 },
 
             }

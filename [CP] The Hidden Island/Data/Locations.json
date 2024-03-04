@@ -2400,13 +2400,24 @@
             // TODO change condition after meeting Winnie
         },
         {
-            "LogName": "Change Hidden Island Map Strings",
+            "LogName": "Set up an invisible actor to set up some map string interaction",
             "Action": "EditData",
             "Target": "Characters/Dialogue/{{ModId}}_InvisibleTempActor",
             "Entries": {
+                // Coffee machine interaction
                 "WnSBrewCoffeeTodayYes": "{{i18n:location.string.WnSHouse_Kitchen_CoffeeMachine_Offer_Accept}}",
                 "WnSBrewCoffeeTodayNo": "{{i18n:location.string.WnSHouse_Kitchen_CoffeeMachine_Offer_Deny}}",
-                "WnSBrewCoffeeFollowUp": "{{i18n:location.string.WnSHouse_Kitchen_CoffeeMachine_Offer_FollowUp}}",           
+                "WnSBrewCoffeeFollowUp": "{{i18n:location.string.WnSHouse_Kitchen_CoffeeMachine_Offer_FollowUp}}",
+                // Winnie's bed interaction
+                "WnSCheckBedCatch": "{{i18n:location.string.WnSHouse_WinnieRoom_Bed_Catch}}",
+                "WnSCheckBedPrompt": "{{i18n:location.string.WnSHouse_WinnieRoom_Bed_Prompt}}",
+                "WnSCheckBedTodayDialogueYes": "{{i18n:location.string.WnSHouse_WinnieRoom_Bed_Yes}}",
+                "WnSCheckBedTodayDialogueNo": "{{i18n:location.string.WnSHouse_WinnieRoom_Bed_No}}",
+                "WnSCheckCoffinTodayDialogueYes": "{{i18n:location.string.WnSHouse_WinnieRoom_Coffin_Yes}}",
+                "WnSCheckCoffinTodayDialogueNo": "{{i18n:location.string.WnSHouse_WinnieRoom_Coffin_No}}",
+                "WnSReadDiaryTodayDialogueYes": "{{i18n:location.string.WnSHouse_WinnieRoom_Diary_Yes}}",
+                "WnSReadDiaryTodayDialogueNo": "{{i18n:location.string.WnSHouse_WinnieRoom_Diary_No}}",
+                "WnSCheckBedTodayFollowUp": "{{i18n:location.string.WnSHouse_WinnieRoom_Bed_FollowUp}}"
             }
         },
         {
@@ -2435,7 +2446,7 @@
                 "WnSHouse_Bathroom_Bathtub": "{{i18n:location.string.WnSHouse_Bathroom_Bathtub}}",
                 "WnSHouse_Bathroom_Sink": "{{i18n:location.string.WnSHouse_Bathroom_Sink}}",
                 "WnSHouse_Bathroom_PerfumeAndDirtyClothes": "{{i18n:location.string.WnSHouse_Bathroom_PerfumeAndDirtyClothes}}",
-                "WnSHouse_Bathroom_Note": "{{i18n:location.string.WnSHouse_Bathroom_Note.{{Random:{{Range:1,10}}}} |default={{i18n:location.string.WnSHouse_Bathroom_Note.1}}}}",
+                "WnSHouse_Bathroom_Note": "{{i18n:location.string.WnSHouse_Bathroom_Note.{{Season}}.{{WeekNumber}} |default={{i18n:location.string.WnSHouse_Bathroom_Note.Default}}}}",
                 "WnSHouse_Hallway_Bookshelf": "{{i18n:location.string.WnSHouse_Hallway_Bookshelf}}",
                 "WnSHouse_Hallway_Sunflower": "{{i18n:location.string.WnSHouse_Hallway_Sunflower}}",
                 "WnSHouse_Hallway_Cabinet": "{{i18n:location.string.WnSHouse_Hallway_Cabinet}}",
