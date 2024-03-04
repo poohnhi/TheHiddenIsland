@@ -18,6 +18,15 @@
             }
         },
         {
+          "LogName": "Solary Main Schedule",
+          "Action": "EditData",
+          "Target": "Characters/schedules/WnS.Solary",
+          "Entries": {
+            "spring": "610 {{ModId}}_House 36 27 0/700 {{ModId}}_House 12 28 0/1000 {{ModId}}_House 15 31 2/1600 {{ModId}}_House 15 13 1/1900 {{ModId}}_House 27 11 2/2100 {{ModId}}_House 34 11 0/2400 {{ModId}}_House 17 10 1",
+            // "spring": "630 {{ModId}}_HiddenIsland 11 43 0/700 {{ModId}}_HiddenIsland 11 46 0/800 {{ModId}}_HiddenIsland 23 44 2/830 {{ModId}}_HiddenIsland 32 40 2/900 {{ModId}}_HiddenIsland 25 44 2/930 {{ModId}}_HiddenIsland 17 26 2"
+          }
+        },
+        {
             "LogName": "Winnie Animations",
             "Action": "EditData",
             "Target": "Data/animationDescriptions",

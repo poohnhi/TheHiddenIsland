@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="21" nextobjectid="101">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="21" nextobjectid="102">
  <properties>
   <property name="AllowWakeUpWithoutBed" value="true"/>
   <property name="DayTiles" value="Buildings3 15 7 146 Buildings3 16 7 147 Buildings3 18 7 146 Buildings3 19 7 147 Buildings3 15 8 178 Buildings3 16 8 179 Buildings3 18 8 178 Buildings3 19 8 179 Buildings2 26 24 151 Buildings2 26 25 183"/>
@@ -1256,9 +1256,9 @@
     <property name="Action" value="OpenShop poohnhi.WnS.CP_WinnieShop"/>
    </properties>
   </object>
-  <object id="76" name="TileData" x="144" y="256" width="16" height="16">
+  <object id="76" name="TileData" x="176" y="256" width="16" height="16">
    <properties>
-    <property name="Action" value="poohnhi.WnS.CP_Diary WnS.Winnie &quot;Characters\Dialogue\WnS.Winnie:Winnie_Diary_Catch/Characters\Dialogue\WnS.Winnie:Winnie_Diary_Read&quot;"/>
+    <property name="Action" value="poohnhi.WnS.CP_Diary WnS.Winnie &quot;Characters\Dialogue\poohnhi.WnS.CP_InvisibleTempActor:WnSCheckBedCatch/Characters\Dialogue\poohnhi.WnS.CP_InvisibleTempActor:WnSCheckBedPrompt&quot;"/>
    </properties>
   </object>
   <object id="77" name="TileData" x="464" y="432" width="16" height="16">
@@ -1364,6 +1364,11 @@
   <object id="100" name="TileData" x="240" y="432" width="48" height="32">
    <properties>
     <property name="Action" value="Message WnSHouse_LivingRoom_Decoration"/>
+   </properties>
+  </object>
+  <object id="101" name="TileData" x="32" y="416" width="16" height="16">
+   <properties>
+    <property name="Action" value="Warp 6 22 poohnhi.WnS.CP_Solarium"/>
    </properties>
   </object>
  </objectgroup>

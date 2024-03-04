@@ -118,14 +118,14 @@ namespace The_Hidden_Island
                 }
                 string message = rawMessage.Replace("\"", "");
                 NPC npc2 = Game1.getCharacterFromName(npcName3);
+                NPC tempNpc2 = Game1.getCharacterFromName("poohnhi.WnS.CP_InvisibleTempActor");
                 if (npc2 != null && npc2.currentLocation == player.currentLocation && Utility.tileWithinRadiusOfPlayer(npc2.TilePoint.X, npc2.TilePoint.Y, 8, player))
                 {
                     try
                     {
                         string str_name = message.Split('/')[0];
-                        string str_name_no_filePath = str_name.Substring(str_name.IndexOf(':') + 1);
-                        npc2.setNewDialogue(str_name, add: true);
-                        Game1.drawDialogue(npc2);
+                        tempNpc2.setNewDialogue(str_name, add: true);
+                        Game1.drawDialogue(tempNpc2);
                         return true;
                     }
                     catch (Exception)
@@ -135,8 +135,10 @@ namespace The_Hidden_Island
                 }
                 try
                 {
-                    npc2.setNewDialogue(message.Split('/')[1], add: true);
-                    Game1.drawDialogue(npc2);
+                    // Game1.drawDialogueNoTyping(Game1.content.LoadString(message.Split('/')[1]));
+                    string str_name = message.Split('/')[1];
+                    tempNpc2.setNewDialogue(str_name, add: true);
+                    Game1.drawDialogue(tempNpc2);
                     return true;
                 }
                 catch (Exception)
