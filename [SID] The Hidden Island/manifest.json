@@ -1,0 +1,21 @@
+{
+  "Name": "Sprite In Detail - The Hidden Island",
+  "Author": "Pooh",
+  "Version": "1.0.0",
+  "MinimumApiVersion": "3.0.0",
+  "Description": "Test",
+  "UniqueID": "poohnhi.WnS.SID",
+  "ContentPackFor": {
+    "UniqueID": "BleakCodex.SpritesInDetail"
+	},
+  "Dependencies": [
+    {
+      "UniqueID": "Pathoschild.ContentPatcher",
+      "MinimumVersion": "1.22.0"
+    },
+    {
+      "UniqueID": "poohnhi.WnS.CP",
+      "IsRequired": true
+    }
+  ]
+}

@@ -24,6 +24,7 @@
 
     "character.WnS.Winnie.DisplayName": "Winnie",
     "character.WnS.Solary.DisplayName": "Solary",
+    "character.WnS.Xavi.DisplayName": "Xavi",
     "character.WnS.Winnie.Brother": "little brother",
     "character.WnS.Solary.Sister": "sis",
 
@@ -42,6 +43,8 @@
     ////////////////////////////
 
     // Default dialogue
+    "dialogue.daily.WnS.Xavi": "Good day, @. Stay hydrated!",
+    "dialogue.daily.WnS.Solary": "...What do you want?",
 
     "dialogue.daily.WnS.Winnie.Monday": "Monday feels so depressing, don't you think so?$15#$b#Sometimes I wish I could close my eyes and wake up on a Friday night instead.$23",
     "dialogue.daily.WnS.Winnie.Tuesday": "Do you ever dream of winning the lottery, @?$14#$b#If I won, I'll not have to rely on someone else's money.$19",
@@ -693,6 +696,7 @@
     "location.WnS.HiddenIsland.DisplayName": "Hidden Island",
     "location.WnS.HiddenIslandCentral.DisplayName": "Hidden Island Central",
     "location.WnS.House.DisplayName": "Hidden Island's House",
+    "location.WnS.Solarium.DisplayName": "Hidden Island's Solarium",
 
     ////////////////////////////////////
     // Strings From Map Translations //
@@ -701,6 +705,16 @@
     "location.string.WnSHouse_Kitchen_CoffeeMachine_Offer_Accept": "%The aroma of hot coffee rushes into your nose. You receive a hot cup of coffee.#$action AddItem (O)253",
     "location.string.WnSHouse_Kitchen_CoffeeMachine_Offer_Deny": "%You're not in the mood. Maybe later.",
     "location.string.WnSHouse_Kitchen_CoffeeMachine_Offer_FollowUp": "%You already have enough coffee for today. Come back tomorrow.",
+
+    "location.string.WnSHouse_WinnieRoom_Bed_Catch": "%You wanted to check what's under the bed, but Winnie is close by. Better not do it now.",
+    "location.string.WnSHouse_WinnieRoom_Bed_Prompt": "$q WnSReadDiaryToday WnSCheckBedTodayFollowUp#There is something under the bed.#$r WnSCheckBedToday 0 WnSCheckBedTodayDialogueYes#Pull it out.#$r WnSCheckBedToday 0 WnSCheckBedTodayDialogueNo#Leave it there.",
+    "location.string.WnSHouse_WinnieRoom_Bed_Yes": "%You decided to pull it out. It's a coffin.#$q WnSReadDiaryToday WnSCheckBedTodayFollowUp#What will you do with this coffin?#$r WnSCheckBedToday 0 WnSCheckCoffinTodayDialogueYes#Open the coffin.#$r WnSCheckBedToday 0 WnSCheckCoffinTodayDialogueNo#Put it back.",
+    "location.string.WnSHouse_WinnieRoom_Bed_No": "%Maybe not. You decided to leave it there and put a stop to whatever you're doing.",
+    "location.string.WnSHouse_WinnieRoom_Coffin_Yes": "%You decided to open the coffin.#$b#%Oh. Inside it is a small little notebook. You think this is a diary.#$q WnSReadDiaryToday WnSCheckBedTodayFollowUp#What will you do with this diary?#$r WnSReadDiaryToday 0 WnSReadDiaryTodayDialogueYes#Read the diary.#$r WnSCheckBedToday 0 WnSReadDiaryTodayDialogueNo#Put it back.",
+    "location.string.WnSHouse_WinnieRoom_Coffin_No": "%This is creeping you out. No way you're going to open that. You put everything back to where it belongs.",
+    "location.string.WnSHouse_WinnieRoom_Diary_Yes": "%The writing is a little bit messy and blurry since it was stained with water, but you still can read it. The latest entry is from last year, Summer 28.#$b#%It said: \"Today is our birthday. I was looking forward to this for a whole year, but... Solary was too busy. He said he cannot go home this week to celebrate it with me...\"#$b#%\"It hurts. If I know having to celebrate a lonely birthday could be this hurt, I would had wish I never have a birthday.\"",
+    "location.string.WnSHouse_WinnieRoom_Diary_No": "%You wanted to respect this diary owner's privacy, so you put it back.",
+    "location.string.WnSHouse_WinnieRoom_Bed_FollowUp": "%You have read enough for today.",
 
     "location.string.WnSHiddenIsland_Central_Rope": "A nice boat.",
     "location.string.WnSHouse_LivingRoom_Bookshelf_1": "\"A Brief History of Time\", \"Das Kapital\", \"The Language of Flowers\", \"Hunter x Hunter\", \"Frieren at the Funeral\", ... The owner of these books has a wide range of interests.",
@@ -726,16 +740,27 @@
     "location.string.WnSHouse_Bathroom_Sink": "The sink is pretty clean.",
     "location.string.WnSHouse_Bathroom_PerfumeAndDirtyClothes": "A collection of male and female perfumes. Next to it is a basket full of dirty clothes, waiting to be wash.",
     // all this message should change on the monday early morning where Solary comeback to his job.
-    "location.string.WnSHouse_Bathroom_Note.1": "There's a note on the wall. It said: \"Where's my bottle of prismatic jelly that I put in the fridge a few weeks ago again? Do not try to eat it and return it to me before this Saturday. I'm serious!\"",
-    "location.string.WnSHouse_Bathroom_Note.2": "There's a note on the wall. It said: \"Don't mind the bloody clothes, it wasn't my blood. If you can't help me wash it, feel free to burn it. But please do it outside of our house.\"",
-    "location.string.WnSHouse_Bathroom_Note.3": "There's a note on the wall. It said: \"Something urgent just happened and they need me to be there for the next two weeks. I am sorry if you're looking forward to this weekend. I'll buy you a gift later.\"",
-    "location.string.WnSHouse_Bathroom_Note.4": "There's a note on the wall. It said: \"I am craving your special spicy noodles. Can you make it for dinner this Saturday?\"",
-    "location.string.WnSHouse_Bathroom_Note.5": "There's a note on the wall. It said: \"Did you take my void dino egg? For the love of Yoba, please, DO NOT try to cook it and put it back to where it belongs. I will buy you whatever amount of void mayo you want if you leave that egg alone.\"",
-    "location.string.WnSHouse_Bathroom_Note.6": "There's a note on the wall. It said: \"Looks like there will be even more job for me at the Ministry this week. I might not be able to go home this week so don't wait for me and just eat dinner.\"",
-    "location.string.WnSHouse_Bathroom_Note.7": "There's a note on the wall. It said: \"Oh right, I bought a lot of squids as you wish and already put it in the fridge. Enjoy your daily fried calamari.\"",
-    "location.string.WnSHouse_Bathroom_Note.8": "There's a note on the wall. It said: \"I forgot to tell you last night, but I am about to go on an expedition. It would be great if you could make some spicy roasted pork when I get home this Sunday. Expedition food always sucks.\"",
-    "location.string.WnSHouse_Bathroom_Note.9": "There's a note on the wall. It said: \"A colleague just gifted me some new perfumes. I don't think I'm going to use it too frequently, you can try it if you're bored.\"",
-    "location.string.WnSHouse_Bathroom_Note.10": "There's a note on the wall. It said: \"Just received a call from Xavi right before I am about to leave. He was complaining to me that you did not reply to his messages or his calls. Pretending to be unreachable is not going to help you cancel your appointments, you know that, right?\"",
+    "location.string.WnSHouse_Bathroom_Note.Default": "There's a note on the wall. It said: \"Something went wrong at the HQ... Might have to stay overtime to fix it.\"",
+    "location.string.WnSHouse_Bathroom_Note.Spring.1": "There's a note on the wall. It said: \"Happy new year, sis. If everything go well, I will be back on this weekend. We're almost done with the urgent mission. Too bad it happened on the new year though...\"",
+    "location.string.WnSHouse_Bathroom_Note.Spring.2": "There's a note on the wall. It said: \"Oh right, Xavi is going shopping this Wednesday. If you need something, give him the list and we'll see what we can do with it.\"",
+    "location.string.WnSHouse_Bathroom_Note.Spring.3": "There's a note on the wall. It said: \"Where's my bottle of prismatic jelly that I put in the fridge a few weeks ago again? Do not try to eat it and return it to me before this Saturday. I'm serious!\"",
+    "location.string.WnSHouse_Bathroom_Note.Spring.4": "There's a note on the wall. It said: \"I forgot to tell you last night, but I am about to go on an expedition. It would be great if you could make some spicy roasted pork when I get home this Sunday. Expedition food always sucks.\"",
+
+    "location.string.WnSHouse_Bathroom_Note.Summer.1": "There's a note on the wall. It said: \"I know you're easily getting overheat, but try not to break the AC this summer, okay?\"",
+    "location.string.WnSHouse_Bathroom_Note.Summer.2": "There's a note on the wall. It said: \"Just received a call from Xavi right before I am about to leave. He was complaining to me that you did not reply to his messages or his calls. Pretending to be unreachable is not going to help you cancel your appointments, you know that, right?\"",
+    "location.string.WnSHouse_Bathroom_Note.Summer.3": "There's a note on the wall. It said: \"I know I let you use my money without any limitations - but can you at least think before buying something? Our house is about to go out of space because of all the junks you bought!\"",
+    "location.string.WnSHouse_Bathroom_Note.Summer.4": "There's a note on the wall. It said: \"I'm not forgetting our birthday. How do you want to celebrate it? Still the same old competition?\"",
+
+    "location.string.WnSHouse_Bathroom_Note.Fall.1": "There's a note on the wall. It said: \"Looks like there will be even more job for me at the Ministry this week. I might not be able to go home this week so don't wait for me and just eat dinner.\"",
+    "location.string.WnSHouse_Bathroom_Note.Fall.2": "There's a note on the wall. It said: \"Don't mind the bloody clothes, it wasn't my blood. If you don't want to wash it, feel free to burn it. But please do it outside of our house - we don't want another fire accident.\"",
+    "location.string.WnSHouse_Bathroom_Note.Fall.3": "There's a note on the wall. It said: \"Did you take my void dino egg? For the love of Yoba, please, DO NOT try to cook it and put it back to where it belongs. I will buy you your void mayo whenever you want if you leave that egg alone.\"",
+    "location.string.WnSHouse_Bathroom_Note.Fall.4": "There's a note on the wall. It said: \"A colleague just gifted me some new perfumes. I don't think I'm going to use it too frequently, you can try it if you're bored.\"",
+
+    "location.string.WnSHouse_Bathroom_Note.Winter.1": "There's a note on the wall. It said: \"Winter make me suddenly want to eat your special spicy noodles. Can you make it for dinner this Saturday?\"",
+    "location.string.WnSHouse_Bathroom_Note.Winter.2": "There's a note on the wall. It said: \"I bought a lot of squids as you wish and already put it in the fridge. You're right - they're pretty cheap in winter - I think they said it's currently the squid season. Anyway, enjoy your daily fried calamari.\"",
+    "location.string.WnSHouse_Bathroom_Note.Winter.3": "There's a note on the wall. It said: \"Something urgent just happened and they need me to be there for the next two weeks. I am sorry if you're looking forward to the new year celebration... I'll buy you a gift later.\"",
+    "location.string.WnSHouse_Bathroom_Note.Winter.4": "There's a note on the wall. It said: \"Something urgent just happened and they need me to be there for the next two weeks. I am sorry if you're looking forward to the new year celebration... I'll buy you a gift later.\"",
+
     // Solary bring a lot of interesting things home. I bring them to my room sometimes to study it since he usually just throws it in the storage. He's not allowed to enter my room though, so he always leaves a note to complain instead.
     "location.string.WnSHouse_Hallway_Bookshelf": "\"The Wizard's Compendium\", \"Magical Practices and Techniques\", \"The Search for Immortality\", \"Cryptids and Mythical Creatures\", \"History of Magic\",... These books provide a comprehensive knowledge of the magical world.",
     "location.string.WnSHouse_Hallway_Sunflower": "A large pot of sunflower brighten up the hallway with their golden petals.",
@@ -755,7 +780,6 @@
     "location.string.WnSHouse_WinnieRoom_PC": "You try to boot up the PC.#Unfortunately, it's password locked so you cannot go any further.#The lock screen is an image of a guy you don't really recognize.",
     "location.string.WnSHouse_WinnieRoom_Honesty": "Honesty.",
     "location.string.WnSHouse_WinnieRoom_Crocus": "Crocus.",
-    "location.string.WnSHouse_WinnieRoom_Bed": "You were curious and looked under the bed. There is a coffin beneath it.",
     "location.string.WnSHouse_SolaryRoom_Trashcan": "The trashcan is empty.",
     "location.string.WnSHouse_SolaryRoom_Drawer": "The drawer is locked.",
     "location.string.WnSHouse_SolaryRoom_Bookshelf": "Looking through the glass, you can see a lot of magical books. You wanted to take a closer look, but it's locked.#There's a note attached to the glass. It said: \"I'm not going to unlock this if you don't learn how to put my book back to where it was, sis.\"",

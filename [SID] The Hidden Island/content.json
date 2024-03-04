@@ -1,0 +1,9 @@
+{
+	"Sprites": [
+		{
+			"Target": "Characters/WnS.Solary",
+			"FromFile": "assets/WnS.Solary.png",
+			"BreathType" : "None"
+		}
+	]
+ }

@@ -23,6 +23,16 @@
             "Value": "{{WeekDayList |valueAt={{Query: {{Day}}%7}}}}"
         },
         {
+            "Name": "WeekNumberList",
+            "Value": "0, 1, 2, 3, 4"
+        },
+        // The week number of the month
+        // Day 1-7 is week 1, 8-14 is week 2, 15-21 is week 3, 22-28 is week 4
+        {
+            "Name": "WeekNumber",
+            "Value": "{{WeekNumberList |valueAt={{Round: {{Query: (({{Day}}+6)/7)}}, 0, down}}}}"
+        },
+        {
             "Name": "DifficultyNormalCheck",
             "Value": "false",
         },
@@ -408,7 +418,7 @@
         {
             "LogName": "Load blank.json to init dialogue and schedule ",
             "Action": "Load",
-            "Target": "Characters/Dialogue/WnS.Winnie, Characters/Dialogue/MarriageDialogueWnS.Winnie, Characters/schedules/WnS.Winnie, Strings/schedules/WnS.Winnie,  Characters/Dialogue/{{ModId}}_InvisibleTempActor",
+            "Target": "Characters/Dialogue/WnS.Winnie,Characters/Dialogue/WnS.Solary, Characters/Dialogue/WnS.Xavi, Characters/Dialogue/MarriageDialogueWnS.Winnie, Characters/schedules/WnS.Winnie, Characters/schedules/WnS.Solary, Strings/schedules/WnS.Winnie, Characters/Dialogue/{{ModId}}_InvisibleTempActor",
             "FromFile": "Data/blank.json"
         },
         {
@@ -420,7 +430,7 @@
         {
             "LogName": "Portraits and Sprites",
             "Action": "Load",
-            "Target": "Portraits/WnS.Winnie, Characters/WnS.Winnie, Portraits/{{ModId}}_InvisibleTempActor, Characters/{{ModId}}_InvisibleTempActor",
+            "Target": "Portraits/WnS.Winnie, Characters/WnS.Winnie, Portraits/WnS.Solary, Characters/WnS.Solary, Portraits/WnS.Xavi, Characters/WnS.Xavi, Portraits/{{ModId}}_InvisibleTempActor, Characters/{{ModId}}_InvisibleTempActor",
             "FromFile": "Assets/{{Target}}/{{TargetWithoutPath}}.png" // Must load the base first to avoid errors
         },
         // File Include
