@@ -1256,9 +1256,9 @@
     <property name="Action" value="OpenShop poohnhi.WnS.CP_WinnieShop"/>
    </properties>
   </object>
-  <object id="76" name="TileData" x="144" y="256" width="16" height="16">
+  <object id="76" name="TileData" x="176" y="256" width="16" height="16">
    <properties>
-    <property name="Action" value="poohnhi.WnS.CP_Diary WnS.Winnie &quot;Characters\Dialogue\WnS.Winnie:Winnie_Diary_Catch/Characters\Dialogue\WnS.Winnie:Winnie_Diary_Read&quot;"/>
+    <property name="Action" value="poohnhi.WnS.CP_Diary WnS.Winnie &quot;Characters\Dialogue\poohnhi.WnS.CP_InvisibleTempActor:WnSCheckBedCatch/Characters\Dialogue\poohnhi.WnS.CP_InvisibleTempActor:WnSCheckBedPrompt&quot;"/>
    </properties>
   </object>
   <object id="77" name="TileData" x="464" y="432" width="16" height="16">

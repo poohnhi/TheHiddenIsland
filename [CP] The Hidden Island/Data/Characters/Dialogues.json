@@ -14,18 +14,16 @@
                 "DumpsterDiveComment": "{{i18n:dialogue.reaction.{{TargetWithoutPath}}.DumpsterDiveComment{{WnSWinnieRelationship}} |default:{{i18n:dialogue.reaction.{{TargetWithoutPath}}.DumpsterDiveComment}} }}",
                 // Get hit by slingshot
                 "HitBySlingshot": "{{i18n:dialogue.reaction.{{TargetWithoutPath}}.HitBySlingshot{{WnSWinnieRelationship}} |default:{{i18n:dialogue.reaction.{{TargetWithoutPath}}.HitBySlingshot}} }}",
-
-                // Bed tile interaction
-                "Winnie_Diary_Catch": "What are you doing? Stop it!",
-                "Winnie_Diary_Read": "$q WnSReadDiaryToday WnSBed_follow_up#There is something under the bed.#$r WnSCheckBedToday 0 WnSCheckBedTodayDialogueYes#Pull it out.#$r WnSCheckBedToday 0 WnSCheckBedTodayDialogueNo#Leave it there.",
-                "WnSCheckBedTodayDialogueYes": "%You decided to pull it out. It's a coffin.#$q WnSReadDiaryToday WnSBed_follow_up#What will you do with this coffin?#$r WnSCheckBedToday 0 WnSCheckCoffinTodayDialogueYes#Open the coffin.#$r WnSCheckBedToday 0 WnSCheckCoffinTodayDialogueNo#Put it back.",
-                "WnSCheckBedTodayDialogueNo": "%You decided to leave it there.",
-                "WnSCheckCoffinTodayDialogueYes": "%You decided to open the coffin.#$b#%Oh. Inside it is a small little notebook with the word \"Diary\" on its cover.#$q WnSReadDiaryToday WnSBed_follow_up#What will you do with this diary?#$r WnSReadDiaryToday 0 WnSReadDiaryTodayDialogueYes#Read the diary.#$r WnSCheckBedToday 0 WnSReadDiaryTodayDialogueNo#Put it back.",
-                "WnSCheckCoffinTodayDialogueNo": "%No way you are going to open that.",
-                "WnSReadDiaryTodayDialogueYes": "%The writing is a little bit messy but you still can read it. The latest entry is from last year, Summer 28.#$b#%It said: \"Today is our birthday. I was looking forward to this for a whole year, but... Solary was too busy. He said he cannot go home this week to celebrate it with me...\"#$b#%\"It hurts. If I know having to celebrate a lonely birthday could be this hurt, I would had wish I never have a birthday.\"",
-                "WnSReadDiaryTodayDialogueNo": "%You wanted to respect this diary owner's privacy, so you put it back.",
-                "WnSBed_follow_up": "%You decided to not trying to snoop more than you already did."
             }
+        },
+        {
+            "LogName": "Xavi and Solary Dialogue",
+            "Action": "EditData",
+            "Target": "Characters/Dialogue/WnS.Solary, Characters/Dialogue/WnS.Xavi",
+            "Entries": {
+                // Daily dialogues
+                "{{WeekDay}}": "{{i18n:dialogue.daily.{{TargetWithoutPath}}}}",
+            },
         },
         {
             "LogName": "Winnie's Dialogue",
