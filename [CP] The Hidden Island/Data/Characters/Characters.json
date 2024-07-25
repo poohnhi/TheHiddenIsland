@@ -223,7 +223,7 @@
                     "Breather": true,
                 },
                 "{{ModId}}_InvisibleTempActor": {
-                    "DisplayName": "Choices",
+                    "DisplayName": "Coffee Machine",
                     "SocialTab": "HiddenAlways",
                     "CanSocialize": false,
                     "IntroductionsQuest": false,
