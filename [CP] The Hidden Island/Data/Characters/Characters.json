@@ -7,24 +7,6 @@
             "Action": "EditData",
             "Target": "Data/Characters",
             "Entries": {
-                "{{ModId}}_InvisibleTempActor": {
-                    "DisplayName": "InvisibleTempActor",
-                    "SocialTab": "HiddenAlways",
-                    "CanSocialize": "FALSE",
-                    "IntroductionsQuest": false,
-                    "PerfectionScore": false,
-                    "EndSlideShow": "Hidden",
-                    "Home": [{
-                        "Id": "WinnieHome",
-                        "Location": "{{ModId}}_House",
-                        "Tile": {
-                            "X": 27,
-                            "Y": 36
-                        },
-                        "Direction": "Up"
-                    }],
-                    "Breather": false,
-                },
                 "WnS.Winnie": {
                     // TODO Add When HasSeen:Introduction event here
                     // Basic infos
@@ -45,24 +27,44 @@
 
                     // Social features
                     "CanSocialize": true,
-                    "CanBeRomanced": true,
+                    "CanBeRomanced": false,
                     "CanReceiveGifts": true,
                     "CanCommentOnPurchasedShopItems": false,
                     "CanGreetNearbyCharacters": false,
-                    "CanVisitIsland": false,
+                    "CanVisitIsland": false, // change to true if done storyline
                     "Calendar": "HiddenAlways", // change to AlwaysShown if first birthday event for Winnie
                     "SocialTab": "UnknownUntilMet", // change to UnknownUntilMet after introduction event 1
+
+                    // Spouse stuff
+                    "SpouseAdopts": true,
+                    "SpouseWantsChildren": true,
+                    "SpouseGiftJealousy": true,
+                    "SpouseGiftJealousyFriendshipChange": -250,
+                    // "SpouseRoom":
+                    // "SpousePatio":
+                    // "SpouseFloors":
+                    // "SpouseWallpapers":
+
                     "IntroductionsQuest": false,
                     "ItemDeliveryQuests": false,
-                    "PerfectionScore": true,
-                    "EndSlideShow": "MainGroup",
+                    "PerfectionScore": false,
+                    "EndSlideShow": "Hidden",
                     "FriendsAndFamily": {
-                        //"WnS.Solary": "{{i18n:character.WnS.Winnie.Brother}}"
+                        "WnS.Solary": "{{i18n:character.WnS.Winnie.Brother}}",
+                        "WnS.Xavi": "{{i18n:character.WnS.Xavi.DisplayName}}"
                     },
-                    // WinterStarParticipant enable only after boat
-                    // WinterStarGifts enable only after boat
-                    // UnlockConditions only when after introduction 1 i think
-                    // 
+
+                    // Dumpster diving
+                    "DumpsterDiveFriendshipEffect": -50,
+
+                    // Festivals
+                    "FlowerDanceCanDance": true,
+                    "WinterStarParticipant": false, // WinterStarParticipant enable only after boat
+                    // "WinterStarGifts": // WinterStarGifts enable only after boat
+
+                    // Spawn rules
+                    "UnlockConditions": true, // UnlockConditions only when after introduction 1 i think
+                    "SpawnIfMissing": true,
                     "Home": [{
                         "Id": "WinnieHome",
                         "Location": "{{ModId}}_House",
@@ -72,7 +74,171 @@
                         },
                         "Direction": "Up"
                     }],
+
+                    // Appearance & sprite
                     "Breather": true,
+                    "ShakePortraits": [9, 11, 16, 17, 22, 25],
+                },
+                "WnS.Solary": {
+                    // Basic infos
+                    "DisplayName": "{{i18n:character.WnS.Solary.DisplayName}}",
+                    "Gender": "Male",
+                    "Age": "Adult",
+                    "Language": "Default",
+                    "HomeRegion": "Other",
+
+                    // Basic traits
+                    "Manner": "Neutral",
+                    "SocialAnxiety": "Neutral",
+                    "Optimism": "Neutral",
+
+                    // Birthday
+                    "BirthSeason": "summer",
+                    "BirthDay": 28,
+
+                    // Social features
+                    "CanSocialize": true,
+                    "CanBeRomanced": false,
+                    "CanReceiveGifts": true,
+                    "CanCommentOnPurchasedShopItems": false,
+                    "CanGreetNearbyCharacters": false,
+                    "CanVisitIsland": false,
+                    "Calendar": "HiddenAlways", // change to AlwaysShown if first birthday event for Winnie
+                    //"SocialTab": "HiddenAlways",
+
+                    // Spouse stuff
+                    "SpouseWantsChildren": false,
+                    "SpouseGiftJealousy": false,
+                    // "SpouseRoom":
+                    // "SpousePatio":
+                    // "SpouseFloors":
+                    // "SpouseWallpapers":
+
+                    "IntroductionsQuest": false,
+                    "ItemDeliveryQuests": false,
+                    "PerfectionScore": false,
+                    "EndSlideShow": "Hidden",
+                    "FriendsAndFamily": {
+                        "WnS.Solary": "{{i18n:character.WnS.Solary.Sister}}"
+                    },
+
+                    // Dumpster diving
+                    "DumpsterDiveEmote": 8,
+                    "DumpsterDiveFriendshipEffect": 0,
+
+                    // Festivals
+                    "FlowerDanceCanDance": false,
+                    "WinterStarParticipant": false,
+
+                    // Spawn rules
+                    "UnlockConditions": true, // UnlockConditions after Winnie's event
+                    "SpawnIfMissing": true,
+                    "Home": [{
+                        "Id": "Home",
+                        "Location": "{{ModId}}_House",
+                        "Tile": {
+                            "X": 17,
+                            "Y": 10
+                        },
+                        "Direction": "Down"
+                    }],
+
+                    // Appearance & sprite
+                    // "MugShotSourceRect": { "X": 0, "Y": 0, "Width": 16.5, "Height": 24 },
+                    "Size": {
+                        "X": 16,
+                        "Y": 34
+                      },
+                    "Breather": false,
+                    // "ShakePortraits": [9, 11, 16, 17, 22, 25],
+                    "CustomFields": {
+                        "poohnhi.PoohCore/HighCharacter": "true"
+                    }
+                },
+                "WnS.Xavi": {
+                    // Basic infos
+                    "DisplayName": "{{i18n:character.WnS.Xavi.DisplayName}}",
+                    "Gender": "Male",
+                    "Age": "Adult",
+                    "Language": "Default",
+                    "HomeRegion": "Other",
+                    "IsDarkSkinned": true,
+
+                    // Basic traits
+                    "Manner": "Polite",
+                    "SocialAnxiety": "Outgoing",
+                    "Optimism": "Positive",
+
+                    // Birthday
+                    "BirthSeason": "spring",
+                    "BirthDay": 3,
+
+                    // Social features
+                    "CanSocialize": true,
+                    "CanBeRomanced": false,
+                    "CanReceiveGifts": false,
+                    "CanCommentOnPurchasedShopItems": false,
+                    "CanGreetNearbyCharacters": false,
+                    "CanVisitIsland": false,
+                    "Calendar": "HiddenAlways",
+                    "SocialTab": "HiddenAlways",
+
+                    // Spouse stuff
+                    "SpouseWantsChildren": true,
+                    "SpouseGiftJealousy": false,
+                    // "SpouseRoom":
+                    // "SpousePatio":
+                    // "SpouseFloors":
+                    // "SpouseWallpapers":
+
+                    "IntroductionsQuest": false,
+                    "ItemDeliveryQuests": false,
+                    "PerfectionScore": false,
+                    "EndSlideShow": "Hidden",
+                    "FriendsAndFamily": {
+                        "WnS.Winnie": "{{i18n:character.WnS.Winnie.DisplayName}}",
+                    },
+
+                    // Dumpster diving
+                    "DumpsterDiveFriendshipEffect": 0,
+
+                    // Festivals
+                    "FlowerDanceCanDance": true,
+                    "WinterStarParticipant": false,
+
+                    // Spawn rules
+                    "UnlockConditions": true, // change later
+                    "SpawnIfMissing": true,
+                    "Home": [{
+                        "Id": "Home",
+                        "Location": "BusStop",
+                        "Tile": {
+                            "X": 6,
+                            "Y": 22
+                        },
+                        "Direction": "Down"
+                    }],
+
+                    // Appearance & sprite
+                    "Breather": true,
+                },
+                "{{ModId}}_InvisibleTempActor": {
+                    "DisplayName": "Choices",
+                    "SocialTab": "HiddenAlways",
+                    "CanSocialize": false,
+                    "IntroductionsQuest": false,
+                    "PerfectionScore": false,
+                    "EndSlideShow": "Hidden",
+                    "Home": [{
+                        "Id": "WinnieHome",
+                        "Location": "{{ModId}}_House",
+                        "Tile": {
+                            "X": 27,
+                            "Y": 36
+                        },
+                        "Direction": "Up"
+                    }],
+                    "Breather": false,
                 },
 
             }
@@ -83,7 +249,8 @@
             "Action": "EditData",
             "Target": "Data/NPCGiftTastes",
             "Entries": {
-                "WnS.Winnie": "{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Love{{WnSWinnieFlirty}} |default={{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Love}}}}/202 203 373 {{WnSWinnieRandomizeLovedGift}}/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Like}}/151 253 305 308 395 614 769 798 797 279 -80/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Dislike{{WnSWinnieAngry}}|default={{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Dislike}}}}/-4 -81/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Hate{{WnSWinnieAngry}}|default={{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Hate}}}}/303 346 348 446 684 873 874 768 167 -28 215 226 907/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Neutral}}/260 459 613 634 635 636 637 638 -7 -75 -79 -26 -2 74/"
+                "WnS.Winnie": "{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Love{{WnSWinnieFlirty}} |default={{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Love}}}}/202 203 373 {{WnSWinnieRandomizeLovedGift}}/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Like}}/151 253 305 308 395 614 769 798 797 279 -80/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Dislike{{WnSWinnieAngry}}|default={{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Dislike}}}}/-4 -81/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Hate{{WnSWinnieAngry}}|default={{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Hate}}}}/303 346 348 446 684 873 874 768 167 -28 215 226 907/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Neutral}}/260 459 613 634 635 636 637 638 -7 -75 -79 -26 -2 74/",
+                "WnS.Solary": "{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Love{{WnSWinnieFlirty}} |default={{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Love}}}}/202 203 373 {{WnSWinnieRandomizeLovedGift}}/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Like}}/151 253 305 308 395 614 769 798 797 279 -80/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Dislike{{WnSWinnieAngry}}|default={{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Dislike}}}}/-4 -81/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Hate{{WnSWinnieAngry}}|default={{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Hate}}}}/303 346 348 446 684 873 874 768 167 -28 215 226 907/{{i18n:dialogue.gift.WnS.Winnie.GiftDefault.Neutral}}/260 459 613 634 635 636 637 638 -7 -75 -79 -26 -2 74/"
             }
             // TODO Add When HasSeen:Introduction event here
         },

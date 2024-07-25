@@ -39,6 +39,10 @@
             "IsRequired": true
         },
         {
+            "UniqueID": "hxw.tilesheets",
+            "IsRequired": true
+        },
+        {
             "UniqueID": "aedenthorn.CustomFixedDialogue",
             "IsRequired": false
         },
