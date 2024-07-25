@@ -82,10 +82,10 @@ namespace The_Hidden_Island
                     _ambientLightColor = new Color(150, 120, 50);
                     if (Game1.currentLocation == gameLocation)
                     {
-                        int fade_start_time = Utility.ConvertTimeToMinutes(Game1.getStartingToGetDarkTime());
-                        int fade_end_time = Utility.ConvertTimeToMinutes(Game1.getModeratelyDarkTime());
-                        int light_fade_start_time = Utility.ConvertTimeToMinutes(Game1.getModeratelyDarkTime());
-                        int light_fade_end_time = Utility.ConvertTimeToMinutes(Game1.getTrulyDarkTime());
+                        int fade_start_time = Utility.ConvertTimeToMinutes(Game1.getStartingToGetDarkTime(gameLocation));
+                        int fade_end_time = Utility.ConvertTimeToMinutes(Game1.getModeratelyDarkTime(gameLocation));
+                        int light_fade_start_time = Utility.ConvertTimeToMinutes(Game1.getModeratelyDarkTime(gameLocation));
+                        int light_fade_end_time = Utility.ConvertTimeToMinutes(Game1.getTrulyDarkTime(gameLocation));
                         float num = (float)Utility.ConvertTimeToMinutes(Game1.timeOfDay) + (float)Game1.gameTimeInterval / 7000f * 10f;
                         float lerp = Utility.Clamp((num - (float)fade_start_time) / (float)(fade_end_time - fade_start_time), 0f, 1f);
                         float light_lerp = Utility.Clamp((num - (float)light_fade_start_time) / (float)(light_fade_end_time - light_fade_start_time), 0f, 1f);

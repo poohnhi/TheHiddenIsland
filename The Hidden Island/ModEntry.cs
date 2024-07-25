@@ -84,6 +84,14 @@ namespace The_Hidden_Island
                 original: AccessTools.Method(typeof(StardewValley.GameLocation), "isActionableTile"),
                 prefix: new HarmonyMethod(typeof(Patches), nameof(Patches.isActionableTile_Prefix))
             );
+            harmony.Patch(
+                original: AccessTools.Method(typeof(StardewValley.Event), "addSpecificTemporarySprite"),
+                postfix: new HarmonyMethod(typeof(Patches), nameof(Patches.addSpecificTemporarySprite_Postfix))
+            );
+            harmony.Patch(
+                original: AccessTools.Method(typeof(StardewValley.Event), nameof(Event.endBehaviors), new Type[] { typeof(string[]), typeof(GameLocation)}),
+                prefix: new HarmonyMethod(typeof(Patches), nameof(Patches.endBehaviors_Prefix))
+            );
             GameLocation.RegisterTileAction("poohnhi.WnS.CP_HouseClock", this.HandleClock);
             GameLocation.RegisterTileAction("poohnhi.WnS.CP_Diary", this.HandleDiary);
 
