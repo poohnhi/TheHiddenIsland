@@ -39,6 +39,9 @@ using xTile.Tiles;
 using StardewValley.ItemTypeDefinitions;
 using StardewValley.SpecialOrders;
 using System.Threading;
+using Point = Microsoft.Xna.Framework.Point;
+using static System.Net.WebRequestMethods;
+using StardewValley.GameData;
 
 namespace The_Hidden_Island
 {
@@ -453,6 +456,110 @@ namespace The_Hidden_Island
                 Monitor.Log($"Failed in {nameof(isActionableTile_Prefix)}:\n{ex}", LogLevel.Error);
                 return true;
             }
+        }
+        internal static void endBehaviors_Prefix(StardewValley.Event __instance, string[] args, GameLocation location)
+        {
+            try
+            {
+                if (Game1.getMusicTrackName().Contains(Game1.currentSeason) && ArgUtility.Get(__instance.eventCommands, 0) != "continue")
+                {
+                    Game1.stopMusicTrack(MusicContext.Default);
+                }
+                switch (ArgUtility.Get(args, 1))
+                {
+                    case "WnSIntroCGDeath":
+                        {
+                            Game1.playSound("death");
+                            Game1.player.health = -1;                            
+                            Game1.eventOver = true;
+                            __instance.CurrentCommand += 2;
+                            Game1.screenGlowHold = false;
+                            Game1.screenGlowOnce(Color.Black, hold: true, 1f, 1f);
+                            break;
+                        }
+                }
+            }
+            catch (Exception ex)
+            {
+                Monitor.Log($"Failed in {nameof(endBehaviors_Prefix)}:\n{ex}", LogLevel.Error);
+            }
+        }
+
+        internal static void addSpecificTemporarySprite_Postfix(StardewValley.Event __instance, string key, GameLocation location, string[] args)
+        {
+            try
+            {
+                switch (key)
+                {
+                    case "WnSObeliskWarp":
+                        {
+                            for (int i = 0; i < 12; i++)
+                            {
+                                __instance.farmer.currentLocation.temporarySprites.Add(new TemporaryAnimatedSprite(354, Game1.random.Next(25, 75), 6, 1, new Vector2(Game1.random.Next((int)__instance.farmer.position.X - 256, (int)__instance.farmer.position.X + 192), Game1.random.Next((int)__instance.farmer.position.Y - 256, (int)__instance.farmer.position.Y + 192)), flicker: false, Game1.random.NextBool()));
+                            }
+                            Microsoft.Xna.Framework.Rectangle playerBounds = __instance.farmer.GetBoundingBox();
+                            new Microsoft.Xna.Framework.Rectangle(playerBounds.X, playerBounds.Y, 64, 64).Inflate(192, 192);
+                            int j = 0;
+                            Point playerTile = __instance.farmer.TilePoint;
+                            for (int x = playerTile.X + 8; x >= playerTile.X - 8; x--)
+                            {
+                                __instance.farmer.currentLocation.temporarySprites.Add(new TemporaryAnimatedSprite(6, new Vector2(x, playerTile.Y) * 64f, Color.White, 8, flipped: false, 50f)
+                                {
+                                    layerDepth = 1f,
+                                    delayBeforeAnimationStart = j * 25,
+                                    motion = new Vector2(-0.25f, 0f)
+                                });
+                                j++;
+                            }
+                            break;
+                        }
+                    case "WnSIntroCGChange1":
+                        {
+                            for (int i = Game1.currentLocation.temporarySprites.Count - 1; i >= 0; i--)
+                            {
+                                if (Game1.currentLocation.temporarySprites[i].textureName == "Mods\\poohnhi.WnS.CP\\IntroCGSprite")
+                                {
+                                    Game1.currentLocation.temporarySprites[i].sourceRect.Y = 320;
+                                    Game1.currentLocation.temporarySprites[i].sourceRectStartingPos.Y = 320f;
+                                    break;
+                                }
+                            }
+                            break;
+                        }
+                    case "WnSIntroCGChange2":
+                        {
+                            for (int i = Game1.currentLocation.temporarySprites.Count - 1; i >= 0; i--)
+                            {
+                                if (Game1.currentLocation.temporarySprites[i].textureName == "Mods\\poohnhi.WnS.CP\\IntroCGSprite")
+                                {
+                                    Game1.currentLocation.temporarySprites[i].sourceRect.Y = 640;
+                                    Game1.currentLocation.temporarySprites[i].sourceRectStartingPos.Y = 640f;
+
+                                    break;
+                                }
+                            }
+                            break;
+                        }
+                    case "WnSIntroCGChange3":
+                        {
+                            for (int i = Game1.currentLocation.temporarySprites.Count - 1; i >= 0; i--)
+                            {
+                                if (Game1.currentLocation.temporarySprites[i].textureName == "Mods\\poohnhi.WnS.CP\\IntroCGSprite")
+                                {
+                                    Game1.currentLocation.temporarySprites[i].sourceRect.Y = 960;
+                                    Game1.currentLocation.temporarySprites[i].sourceRectStartingPos.Y = 960f;
+                                    break;
+                                }
+                            }
+                            break;
+                        }
+                }
+            }
+            catch (Exception ex)
+            {
+                Monitor.Log($"Failed in {nameof(addSpecificTemporarySprite_Postfix)}:\n{ex}", LogLevel.Error);
+            }
+
         }
     }
 }

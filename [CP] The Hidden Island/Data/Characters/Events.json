@@ -33,6 +33,195 @@
                 faceDirection farmer 2/
                 end warpOut"
             }
+        },
+        {
+            // When you interact with the statue, it can warp you home
+            "LogName": "Teleport Default Event",
+            "Action": "EditData",
+            "Target": "Data/Events/{{ModId}}_HiddenIsland", //action AddItem (O)24/pause 500/
+            "Entries": {
+                "{{ModId}}_Event_TeleportBackHomeFromHiddenIslandThroughStatue/GameStateQuery false": "none/
+                17 22/
+                farmer 17 23 0/
+                skippable/
+                question fork1 \"The power of this statue will bring you home.#Stay here.#Go home.\"/
+                fork {{ModId}}_Event_TeleportBackHomeFromHiddenIslandThroughStatue_GoHome/
+                end",
+                "{{ModId}}_Event_TeleportBackHomeFromHiddenIslandThroughStatue_GoHome": "
+                faceDirection farmer 2/
+                animate farmer false true 2000 57/
+                totemWarpEffect 17 23 255,255,255 \"Mods/{{ModId}}/Objects\" 80,0,16,16/
+                pause 2000/warp farmer 999 999/
+                globalFade 0.007 true/
+                changeLocation farmHouse/
+                faceDirection farmer 2/
+                end warpOut"
+            }
+        },
+        // add music cue
+        {
+            "Action": "EditData",
+            "Target": "Data/AudioChanges",
+            "Entries": {
+                "{{ModId}}_Abandoned_Heart": {
+                    "ID": "{{ModId}}_Abandoned_Heart",
+                    "Category": "Music",
+                    "FilePaths": [ "{{AbsoluteFilePath: Assets/Music/{{ModId}}_Abandoned_Heart.ogg}}" ],
+                    "StreamedVorbis": true,
+                    "Looped": true
+                }
+            }
+        },
+        // add temp map event
+        {
+            "Action": "Load",
+            "Target": "Maps/{{ModId}}_IntroCG_Background, Maps/{{ModId}}_IntroCG_Background_Empty",
+            "FromFile": "Assets/Maps/EventMaps/{{TargetWithoutPath}}.tmx"
+        },
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/IntroCGSprite",
+            "FromFile": "Assets/Maps/EventMaps/sprite2.png"
+        },
+        {
+			"LogName": "Location Data",
+			"Action": "EditData",
+			"Target": "Data/Locations",
+			"Entries": {
+                "{{ModId}}_IntroCG_Background": {
+					"DisplayName": "{{i18n:location.WnS.WinnieEvent.IntroCG}}",
+					"CreateOnLoad": { "MapPath": "Maps/{{ModId}}_IntroCG_Background" },
+				},
+                "{{ModId}}_IntroCG_Background_Empty": {
+					"DisplayName": "{{i18n:location.WnS.WinnieEvent.IntroCG}}",
+					"CreateOnLoad": { "MapPath": "Maps/{{ModId}}_IntroCG_Background_Empty" },
+				}
+            }
+        },
+        {
+            // Introduction event
+            "LogName": "Winnie Introduction Event",
+            "Action": "EditData",
+            "Target": "Data/Events/{{ModId}}_HiddenIsland", //action AddItem (O)24/pause 500/
+            "Entries": {
+                // patch reload poohnhi.WnS.CP
+                // debug ebi poohnhi.WnS.CP_Event_WinnieIntroductionEventPart1
+                "{{ModId}}_Event_WinnieIntroductionEventPart1/": "{{ModId}}_Abandoned_Heart/
+                -100 -100/
+                farmer -100 -100 2 WnS.Winnie 20 46 2/
+                ignoreCollisions farmer/
+                ignoreCollisions WnS.Winnie/
+                changeName WnS.Winnie ???/
+                changePortrait WnS.Winnie Beach/
+                changeSprite WnS.Winnie Beach/
+                viewport 20 23 clamp true/
+                pause 2000/
+                playSound wand/
+                pause 300/
+                warp farmer 17 23/
+                specificTemporarySprite WnSObeliskWarp/
+                pause 1000/
+                emote farmer 8/
+                pause 1000/
+                move farmer 0 2 2 true/
+                viewport move 0 2 1000/
+                pause 2000/
+                faceDirection farmer right/
+                pause 500/
+                faceDirection farmer down/
+                pause 500/
+                faceDirection farmer left/
+                pause 500/
+                faceDirection farmer down/
+                pause 500/
+                emote farmer 16/
+                speed farmer 4/
+                advancedMove farmer false 0 4 3 0 0 15 2 4000/
+                viewport move 0 3 6500/
+                pause 6500/
+                jump farmer/
+                emote farmer 16/
+                speed farmer 3/
+                globalFade/
+                viewport -1000 -1000/
+                pause 500/
+                changeLocation {{ModId}}_IntroCG_Background/
+                viewport 17 9 clamp/
+                temporaryAnimatedSprite Mods\\{{ModId}}\\IntroCGSprite 0 0 400 320 450 3 99999 5 2 false false 1 0 1 0 0 0 ping_pong/
+                pause 2400/
+                specificTemporarySprite WnSIntroCGChange1/
+                pause 2400/
+                specificTemporarySprite WnSIntroCGChange2/
+                pause 2400/
+                message \"What the... when did you...\"/
+                pause 1000/
+                globalFade/
+                viewport -1000 -1000/
+                faceDirection WnS.Winnie up/
+                pause 500/
+                changeLocation {{ModId}}_HiddenIsland/
+                viewport 20 46 clamp true/
+                pause 2000/
+                speak WnS.Winnie \"Wait... Stand right there! Who are you?$17\"/
+                pause 300/
+                quickQuestion What will you do?#Introduce yourself.#Come closer.
+                (break)emote farmer 40\\pause 500\\
+                (break)changeSprite WnS.Winnie BeachStep\\pause 300\\viewport move 0 1 1000\\move farmer 0 1 2 true\\move WnS.Winnie 0 1 2 true\\shake WnS.Winnie 99999\\speak WnS.Winnie \"Are you deaf? D-don't come any closer!$6\"\\question fork1 \"What will you do?#Stay still.#Ignore her warning and keep walking forward.\"\\fork {{ModId}}_Event_WinnieIntroductionEventPart1_Fork1\\speak WnS.Winnie \"Just...stand right there, and answer my question first. Who are you?$28\"\\emote farmer 40\\pause 500\\shake WnS.Winnie 1/
+                speak WnS.Winnie \"{{PlayerName}}? Never heard of you before... How did you get here? $6\"/
+                pause 300/
+                emote farmer 40/
+                pause 300/
+                emote WnS.Winnie 40/
+                pause 500/
+                speak WnS.Winnie \"...Are you serious?$28\"/
+                pause 300/
+                emote farmer 8/
+                pause 500/
+                speak WnS.Winnie \"Someone sent you a mysterious warp totem and you just... go ahead and use it?$18#$b#...I don't even know if I should call you brave or stupid... Perhaps both?$27\"/
+                pause 300/
+                emote farmer 28/
+                pause 500/
+                speak WnS.Winnie \"Whoever sent you that totem must want you to be dead. You're lucky he... I mean, this island owner isn't here today. He'd kill you in an instant.$23#$b#Well, maybe not kill, but beat you close to death. That's more of his style.$24#$b#Anyway, if you value your life, I suggest you leave immediately. This place is hidden away for a reason.$0\"/
+                pause 300/
+                emote farmer 40/
+                speak WnS.Winnie \"I'll keep your existence a secret for now. You can interact with the statue to warp back to where you called home. I see him use it all the time, so you should be able to do the same too, right?\"/
+                pause 300/
+                emote farmer 28/
+                quickQuestion What will you do?#Leave this island.#Stay for a little bit longer.
+                (break)
+                (break)speak WnS.Winnie \"Huh, you still want to stay after I warned you?$7#$b#Don't blame me if something did happen, okay?$30\"\\
+                pause 300/
+                emote farmer 32/
+                move farmer 0 -4 0/
+                pause 300/
+                emote farmer 28/
+                end",
+                "{{ModId}}_Event_WinnieIntroductionEventPart1_Fork1": "
+                pause 500/
+                viewport move 0 1 1000/
+                move farmer 0 1 2 true/move WnS.Winnie 0 1 2 true/
+                speak WnS.Winnie \"Don't say I didn't warn you.$37\"/
+                playMusic none/
+                faceDirection WnS.Winnie up/
+                pause 1000/
+                speed WnS.Winnie 8/
+                move WnS.Winnie 0 -1 0/
+                faceDirection farmer 2 true/animate farmer false true 100 94/startJittering/viewport 17 100 true/warp farmer 17 99/end WnSIntroCGDeath"
+            }
         }
     ]
+    /*
+	4- empty can
+	8- question mark
+	12- angry
+	16- exclamation
+	20- heart
+	24- sleep
+	28- sad
+	32- happy
+	36- x
+	40- pause
+	52- video game
+	56- music note
+	60- blush*/
 }

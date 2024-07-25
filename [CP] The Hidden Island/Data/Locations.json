@@ -35,9 +35,19 @@
                     "ReviveLocations": [
                         {
                             "Location": "{{ModId}}_House",
+                            "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_Met_Winnie",
                             "Position": {
                                 "X": 9,
                                 "Y": 32
+                            }
+                        },
+                        {
+                            "Id": "Default",
+                            "Condition": null,
+                            "Location": "Hospital",
+                            "Position": {
+                                "X": 20,
+                                "Y": 12
                             }
                         }
                     ]

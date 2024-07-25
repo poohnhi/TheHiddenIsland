@@ -3,13 +3,13 @@
 ## What's this?
 - This is a WIP mod that will add a pair of twins (Winnie and Solary) to Stardew Valley.
 - For Stardew Valley 1.6+ only.
-- This mod is still on a very early stage. Currently there are no events yet.
+- This mod is still on a very early stage.
 - Winnie exists. She have a very basic schedule, can be talked to and can receive gifts.
 - Solary will be added later. However, he's locked behind Winnie's events.
 - This mod might break you game since I'm not very experienced in C# yet. Do back up your save file frequently to be safe.
 
 ## How can I meet them?
-- Story purpose: After receiving a sword and successfully receive forest magic, you'll receive a mysterious letter. Read the letter to know how to meet them.
+- Story purpose: After receiving a sword and successfully receive forest magic from the local wizard, you'll receive a mysterious letter. Read the letter to know how to meet them.
 - Test purpose: Use CJB Item Spawner and search for Hidden Island. Use that item to teleport to the island.
 
 ## What to be expected in the future?
@@ -25,38 +25,28 @@
 # NPC Info (SPOILERS)
 
 ## Winnie
-- **Age**: 24
-- **Birthday**: 28th of Summer
-- **Occupation**: Unemployed. Wanted to be a mage like her brother.
-- **Relationship**: Solary's older twins. Xavi's childhood friend.
-- **Personality**: Pretty random. Sometimes she'll be sweet, sometimes she'll be playful,... sometimes mean, immature and spoiled. Most of the time, she'll treats you the same way you treat her. If you're her friend, she'll cook you food, make you gifts
-- **Hobbies**: Technology - internet, stories, cooking food, eating food, flower gardening, sleeping, bathing in ice water.
-- **Loves**: Fried Calamari, Strange Buns, Golden Pumpkin, Milk Coffee.
-- **Likes**: Void Egg, Void Mayo, Void Essence, Squid, Triple Shot Espresso, Coffee, Green Tea, all sweet foods, all flowers.
-- **Neutral**: All other foods, all fruits, all vegetables.
-- **Dislikes**: All fishes, all forages.
-- **Hates**: Rabbit's Foot, Bugs Meat, Bug Steak, Solar Essence (it make her feels sick), alcohols, low-quality fizzy drinks (like joja cola), spicy foods/bitter food
-- **More useless info**:
-    - Very low body temperature, her skin is as cold as ice. Hates the heat and very comfortable with the cold.
-    - Magic does not affect her in any kind. It nullifies itself when having physical contact with her. If a mage make a contact with her physically, their mana will become unstable and if they use their magic with this state, it will be very risky. They will be back to normal when they stay away from her. Same for magic objects - the mana will be unstable and that magic object will not functional until she stop touching it. She cannot use magic or any magic items like potions, totems or teleport circle. Mages cannot use magic to harm her. Monsters with magical core can't harm her with their magic fireballs, acid slimes,... However, she's not immune to physical.
-    - Like purple, white and black
-    
-## Solary
-- **Age**: 24
-- **Birthday**: 28th of Summer
-- **Occupation**: Currently working with the Ferngill Republic Ministry of Magic. Spend most of the time at the Ministry. Visit Hidden Island on the weekends only.
-- **Relationship**: Winnie's younger twins. Xavi's business partner. Respected but also disliked by most member of magic community.
-- **Personality**: A workaholic and addicted to magic. Keep a distance with almost everyone, doesn't trust anyone except his sister. Not very talkative, but thinks a lot. Since Winnie is the only family member he has, he might be too over-protective of her and this behavior sours their relationship. Dislikes the player, might open up later only if special conditions are met.
-- **Hobbies**: Researching magic, reading, potion brewing, raising his pet leopard lizard
-- **Loves**: Solar Essence, Green Tea, all sweet food, all spicy foods
-- **Likes**: Rabbit's Foot, Bugs Meat, Bug Steak, Bait (worm one, not fishing baits - to feed his lizard)
-- **Neutral**: Void Essence, all food (except sweet and spicy which is loved, and veggie food which is disliked), all flowers
-- **Dislikes**: Alcohols, all veggies, all vegetarian foods
-- **Hates**: Strange Buns, Void Egg, Void Mayo, all bitter food, all fishes, all forages
-- **More useless info**:
-    - Always put on special temperature adjust magic so rarely being affected by the weather. However, he dislike winter because the link to light magic and nature magic is weaker during this time.
-    - He's a young mage so his mana pool is not as strong as experienced mages and usually have to relies on mana potions, that's why he put a lot of effort to research magic and improving his technique.
-    - Like red and gold.
+- __Age__: Adult / 25
+- __Birthday__: Summer 28th
+- __Residence__: An unnamed, hidden island accessible only through a warp totem. However, if you befriend her long enough, maybe you can help her move to East Scarp and rent out the other spare room at Tori's house?
+- __Hobbies__: Reading (comic and romance), listening to stories, flower gardening, cooking food (she's really good at it!), eating food and spending on things.
+- __Relationship__: She has a strained relationship with Solary - her younger twin brother. After she moved to East Scarp, she found herself getting along quite well with her roommates Tori and Nora, as well as sharing interests with Barron, Aideen and Plum... She's friendly with most of her neighbors and enjoys making friends, but for unknown reason, she developed a hyperfixation on Soot the first time they meet. She's also Xavi's childhood friend.
+- __Personality__: She is sweet, kind and caring with her friends. For people that she struggles to understand, she tends to be passive-aggressive towards them. Most of her feelings can be read easily, as she never tries to hide it.
+- __Likes__: Flowers, fried calamari, void food, milk coffee, fluffy animals, obsidian, iridium, purple, white, black.
+- __Dislikes__: Spicy food, heat, bugs, alcohols.
+- __Occupation__: Unemployed. Her dream job is being mage like her brother but she's unable to.
+- __Special__: Her skin is cold as ice. Magic does not affect her in any kind. It nullifies itself when physically contacted with her. If she touch a mage, their mana will become unstable and if they use their magic with this state, it will be very risky. They will be back to normal when they stay away from her. Same for magic objects - the mana will be unstable and that magic object will not functional until she stop touching it. She cannot use magic or any magic items like trinkets, potions and totems.
+
+### Solary
+- __Age__: Adult / 25
+- __Birthday__: Summer 28th
+- __Residence__: He stays in his own tower most of the time and only comes back to the island on the weekends. After his sister moves to East Scarp, he'll live on the island instead and only go to somewhere else if it's about work or his sister request (for example, attending festivals).
+- __Hobbies__: Reading, researching magic, brewing potion, worshipping Yoba and hoarding things.
+- __Relationship__: His sister is the only family member he has, so he tries his best to protect her. He doesn't have anyone he can call a friend, but he does have a few individuals he can trust. Most of his colleagues respect him but also dislike him.
+- __Personality__: He's quiet, patience and intelligent, but difficult to approach and always look like he's tired of everything. Unlike his sister, he doesn't feel it is necessary to maintain good relationships with others. He also hold a big grudge against the farmer.
+- __Likes__: Spicy food, sweets, cactus, small reptiles, gold.
+- __Dislikes__: Veggies, bitter food and drink, weird food, noises, potion overdose, cooking.
+- __Occupation__: Currently working with the Ferngill Republic Ministry of Magic as a member of their Law Enforcement Unit.
+- __Special__: He always put on special temperature adjust magic so he is rarely being affected by the weather. However, he dislikes winter because the link to light magic and nature magic is weaker during this time. He's a young mage so his mana pool is not as strong as experienced mages and usually have to relies on mana potions, that's why he put a lot of effort to research magic and improving his technique.
 
 ## Xavi
 - **Name**: Xavi

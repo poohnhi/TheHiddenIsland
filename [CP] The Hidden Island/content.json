@@ -433,6 +433,12 @@
             "Target": "Portraits/WnS.Winnie, Characters/WnS.Winnie, Portraits/WnS.Solary, Characters/WnS.Solary, Portraits/WnS.Xavi, Characters/WnS.Xavi, Portraits/{{ModId}}_InvisibleTempActor, Characters/{{ModId}}_InvisibleTempActor",
             "FromFile": "Assets/{{Target}}/{{TargetWithoutPath}}.png" // Must load the base first to avoid errors
         },
+        {
+            "LogName": "Portraits and Sprites",
+            "Action": "Load",
+            "Target": "Portraits/WnS.Winnie_Beach, Characters/WnS.Winnie_Beach, Characters/WnS.Winnie_BeachStep",
+            "FromFile": "Assets/{{TargetPathOnly}}/WnS.Winnie/{{TargetWithoutPath}}.png" // Must load the base first to avoid errors
+        },
         // File Include
         {
             "LogName": "Adds Maps, objects, shops, misc. data",
