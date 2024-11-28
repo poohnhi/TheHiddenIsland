@@ -50,7 +50,7 @@
     "dialogue.daily.WnS.Winnie.Tuesday": "Do you ever dream of winning the lottery, @?$14#$b#If I won, I'll not have to rely on someone else's money.$19",
     "dialogue.daily.WnS.Winnie.Wednesday": "Being an adult is too stressful sometimes. Younger me didn't sign up for this.$2",
     "dialogue.daily.WnS.Winnie.Thursday": "If I can use magic... Everything will be much easier.$24",
-    "dialogue.daily.WnS.Winnie.Friday": "Today I wake up and feel so angry for no reason at all.$6#$b#Human emotions are so weird.$7",
+    "dialogue.daily.WnS.Winnie.Friday": "Today I woke up and feel so angry for no reason at all.$6#$b#Human emotions are so weird.$7",
     "dialogue.daily.WnS.Winnie.Saturday": "Have you brought anything for me to eat? I'm starving.$1",
     "dialogue.daily.WnS.Winnie.Sunday": "It's Sunday! Why do I have to wake up to function like a normal person... I just want to sleep.$2",
 
@@ -697,6 +697,7 @@
     "location.WnS.HiddenIslandCentral.DisplayName": "Hidden Island Central",
     "location.WnS.House.DisplayName": "Hidden Island's House",
     "location.WnS.Solarium.DisplayName": "Hidden Island's Solarium",
+    "location.WnS.WinnieEvent.IntroCG": "Winnie Intro CG",
 
     ////////////////////////////////////
     // Strings From Map Translations //
