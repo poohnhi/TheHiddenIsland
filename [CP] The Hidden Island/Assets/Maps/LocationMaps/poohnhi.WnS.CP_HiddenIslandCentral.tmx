@@ -7,7 +7,7 @@
   <property name="DefaultWarpLocation" value="20 17"/>
   <property name="Fall_Objects" value="T"/>
   <property name="Light" value="21 27 6"/>
-  <property name="LocationContext" value="poohnhi.WnS.CP_CentralContext"/>
+  <property name="LocationContext" value="poohnhi.WnS.CP_IslandContext"/>
   <property name="NightTiles" value="AlwaysFront 38 9 368 AlwaysFront 18 14 368 AlwaysFront 22 14 368 AlwaysFront 14 11 802 AlwaysFront 18 11 802"/>
   <property name="Outdoors" value="T"/>
   <property name="SpawnGrassFromPathsOnNewYear" value="T"/>

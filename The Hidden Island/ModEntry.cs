@@ -43,26 +43,20 @@ namespace The_Hidden_Island
     public partial class ModEntry : Mod
     {
         public static IModHelper Mhelper;
-        private string WnSWinnieCurrentDialogueProgressNumberNeutral = "1";
-        private string WnSWinnieCurrentDialogueProgressNumberFriendly = "1";
         public override void Entry(IModHelper helper)
         {
             Mhelper = helper;
             helper.Events.GameLoop.GameLaunched += this.OnGameLaunched;
             helper.Events.GameLoop.DayStarted += this.OnDayStarted;
             helper.Events.GameLoop.DayEnding += this.OnDayEnding;
-            helper.Events.Player.Warped += this.OnWarped;
-            helper.Events.Display.RenderedWorld += this.OnRenderedWorld;
+            //helper.Events.Player.Warped += this.OnWarped;
+            //helper.Events.Display.RenderedWorld += this.OnRenderedWorld;
 
             var harmony = new Harmony(this.ModManifest.UniqueID);
             // example patch, you'll need to edit this for your patch
             harmony.Patch(
                 original: AccessTools.Method(typeof(StardewValley.Object), "performUseAction"),
                 prefix: new HarmonyMethod(typeof(Patches), nameof(Patches.performUseAction_Prefix))
-            );
-            harmony.Patch(
-                original: AccessTools.Method(typeof(StardewValley.GameLocation), "answerDialogueAction"),
-                prefix: new HarmonyMethod(typeof(Patches), nameof(Patches.answerDialogueAction_Prefix))
             );
             harmony.Patch(
                 original: AccessTools.Method(typeof(StardewValley.NPC), "startRouteBehavior"),
@@ -77,12 +71,40 @@ namespace The_Hidden_Island
                 prefix: new HarmonyMethod(typeof(Patches), nameof(Patches.checkAction_Prefix))
             );
             harmony.Patch(
-                original: AccessTools.Method(typeof(StardewValley.Tools.Wand), "wandWarpForReal"),
-                postfix: new HarmonyMethod(typeof(Patches), nameof(Patches.wandWarpForReal_Postfix))
+                original: AccessTools.Method(typeof(StardewValley.Tool), "DoFunction"),
+                postfix: new HarmonyMethod(typeof(Patches), nameof(Patches.DoFunction_Prefix))
             );
             harmony.Patch(
                 original: AccessTools.Method(typeof(StardewValley.GameLocation), "isActionableTile"),
                 prefix: new HarmonyMethod(typeof(Patches), nameof(Patches.isActionableTile_Prefix))
+            );
+            harmony.Patch(
+                original: AccessTools.Method(typeof(StardewValley.GameLocation), "answerDialogueAction"),
+                prefix: new HarmonyMethod(typeof(Patches), nameof(Patches.answerDialogueAction_Prefix))
+            );
+            harmony.Patch(
+                original: AccessTools.Method(typeof(StardewValley.GameLocation), "cleanupBeforePlayerExit"),
+                postfix: new HarmonyMethod(typeof(Patches), nameof(Patches.cleanupBeforePlayerExit_Postfix))
+            );
+            harmony.Patch(
+                original: AccessTools.Method(typeof(StardewValley.GameLocation), "resetLocalState"),
+                postfix: new HarmonyMethod(typeof(Patches), nameof(Patches.resetLocalState_Postfix))
+            );
+            harmony.Patch(
+                original: AccessTools.Method(typeof(StardewValley.GameLocation), "UpdateWhenCurrentLocation"),
+                postfix: new HarmonyMethod(typeof(Patches), nameof(Patches.UpdateWhenCurrentLocation_Postfix))
+            );
+            harmony.Patch(
+                original: AccessTools.Method(typeof(StardewValley.GameLocation), "drawAboveAlwaysFrontLayer"),
+                postfix: new HarmonyMethod(typeof(Patches), nameof(Patches.drawAboveAlwaysFrontLayer_Postfix))
+            );
+            harmony.Patch(
+                original: AccessTools.Method(typeof(StardewValley.Event), "addSpecificTemporarySprite"),
+                postfix: new HarmonyMethod(typeof(Patches), nameof(Patches.addSpecificTemporarySprite_Postfix))
+            );
+            harmony.Patch(
+                original: AccessTools.Method(typeof(StardewValley.Event), nameof(Event.endBehaviors), new Type[] { typeof(string[]), typeof(GameLocation)}),
+                prefix: new HarmonyMethod(typeof(Patches), nameof(Patches.endBehaviors_Prefix))
             );
             GameLocation.RegisterTileAction("poohnhi.WnS.CP_HouseClock", this.HandleClock);
             GameLocation.RegisterTileAction("poohnhi.WnS.CP_Diary", this.HandleDiary);
@@ -179,9 +201,6 @@ namespace The_Hidden_Island
         {
             try
             {
-                if (Game1.isDebrisWeather)
-                    todayIsdebris = true;
-                else todayIsdebris = false;
             }
             catch
             {
@@ -200,111 +219,6 @@ namespace The_Hidden_Island
                 if (s.Contains("WnS"))
                     this.Monitor.Log($"Old day mails: {s}.", LogLevel.Error);
             }*/
-            try
-            {
-                if (Game1.weatherForTomorrow == "Rain")
-                    tmrIsrain = true;
-                else
-                    tmrIsrain = false;
-                if (Game1.weatherForTomorrow == "Storm")
-                    tmrIsstorm = true;
-                else
-                    tmrIsstorm = false;
-                if (ModEntry.tmrIsrain)
-                {
-                    LocationWeather locationWeather = Game1.netWorldState.Value.LocationWeather["poohnhi.WnS.CP_CentralContext"];
-                    locationWeather.weatherForTomorrow.Set("Rain");
-                }
-                if (ModEntry.tmrIsstorm)
-                {
-                    LocationWeather locationWeather = Game1.netWorldState.Value.LocationWeather["poohnhi.WnS.CP_CentralContext"];
-                    locationWeather.weatherForTomorrow.Set("Storm");
-                }
-            }
-            catch
-            {
-
-            }
-        }
-        public void OnWarped(object sender, WarpedEventArgs e)
-        {
-            try
-            { 
-                if (e.NewLocation.Name == "poohnhi.WnS.CP_HiddenIsland")
-                {
-                    if (Game1.currentSeason != "winter")
-                    {
-                        Game1.isDebrisWeather = true;
-                        if (!todayIsdebris)
-                            Game1.debrisWeather.Clear();
-                    }
-                    return;
-                }
-                if (e.OldLocation.Name == "poohnhi.WnS.CP_HiddenIslandCentral" && e.NewLocation.Name != "poohnhi.WnS.CP_HiddenIslandCentral")
-                {
-                    if (Game1.currentSeason != "winter")
-                    {
-                        if (!todayIsdebris)
-                        {
-                            Game1.isDebrisWeather = false;
-                            Game1.debrisWeather.Clear();
-                        }
-                    }
-                    return;
-                }
-                if (e.NewLocation.Name == "poohnhi.WnS.CP_HiddenIslandCentral")
-                {
-                    GameLocation gameLocation = e.NewLocation;
-                    if (!Game1.isRaining)
-                    {
-                        initCentral(gameLocation);
-                        if (Game1.currentSeason != "winter")
-                        {
-                            Game1.isDebrisWeather = true;
-                            Game1.debrisWeather = weatherDebris;
-                        }
-                    }
-                    return;
-                }
-                if (e.OldLocation.Name == "poohnhi.WnS.CP_HiddenIsland")
-                {
-                    if (!todayIsdebris)
-                    {
-                        Game1.isDebrisWeather = false;
-                    }
-                    else
-                    {
-                        Game1.debrisWeather.Clear();
-                        Game1.populateDebrisWeatherArray();
-                        Game1.isDebrisWeather = true;
-                    }
-                    return;
-                }
-            }
-            catch
-            {
-
-            }
-        }
-        public void OnRenderedWorld(object sender, RenderedWorldEventArgs e)
-        {
-            try
-            {
-                GameLocation gameLocation = Game1.currentLocation;
-                //if (Game1.currentSeason == "winter")
-                //    return;
-                if (gameLocation.Name == "poohnhi.WnS.CP_HiddenIslandCentral")
-                {
-                    drawCentral();
-                    _updateWoodsLighting(Game1.currentLocation);
-                }
-                else
-                    return;
-            }
-            catch
-            {
-
-            }
         }
     }
 }
