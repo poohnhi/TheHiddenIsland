@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>The_Hidden_Island</RootNamespace>
-	<GamePath>G:/Steam/steamapps/common/Stardew Valley</GamePath>
-	  <EnableHarmony>true</EnableHarmony>
+	<GamePath>C:/SteamLibrary/steamapps/common/Stardew Valley</GamePath>
+	<EnableHarmony>true</EnableHarmony>
 
   </PropertyGroup>
 

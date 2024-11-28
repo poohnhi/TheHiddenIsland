@@ -22,6 +22,8 @@
                     "DefaultMusic": "submarine_song",
                     "DefaultMusicDelayOneScreen": true,
                     "CopyWeatherFromLocation": "Default",
+                    "PlayRandomAmbientSounds": true,
+                    "MaxPassOutCost": 0,
                     "PassOutLocations": [
                         {
                             "Condition": "!DAY_OF_WEEK Friday Saturday Sunday",
@@ -41,67 +43,6 @@
                             }
                         }
                     ]
-                },
-                "{{ModId}}_CentralContext": {
-                    "DefaultMusic": "submarine_song",
-                    "DefaultMusicDelayOneScreen": true,
-                    "PlayRandomAmbientSounds": true,
-                    "AllowRainTotem": false,
-                    "RainTotemAffectsContext": true,
-                    "WeatherConditions": [
-                        {
-                            "Condition": "IS_FESTIVAL_DAY 1",
-                            "Weather": "Wind"
-                        },
-                        {
-                            "Condition": "DAYS_PLAYED 2, !DAYS_PLAYED 3",
-                            "Weather": "Rain"
-                        },
-                        {
-                            "Condition": "SEASON summer, SYNCED_SUMMER_RAIN_RANDOM 0.12 .003, RANDOM .85",
-                            "Weather": "Storm"
-                        },
-                        {
-                            "Condition": "SEASON summer, SYNCED_SUMMER_RAIN_RANDOM 0.12 .003, RANDOM .25, DAYS_PLAYED 28, !DAY_OF_MONTH 1, !DAY_OF_MONTH 2",
-                            "Weather": "Storm"
-                        },
-                        {
-                            "Condition": "SEASON spring fall, SYNCED_RANDOM day location_weather .183, RANDOM .25, DAYS_PLAYED 28, !DAY_OF_MONTH 1, !DAY_OF_MONTH 2",
-                            "Weather": "Storm"
-                        },
-                        {
-                            "Condition": "SEASON winter, SYNCED_RANDOM day location_weather 0.63",
-                            "Weather": "Snow"
-                        },
-                        {
-                            "Condition": "SEASON summer, SYNCED_SUMMER_RAIN_RANDOM 0.12 .003, !DAY_OF_MONTH 1",
-                            "Weather": "Rain"
-                        },
-                        {
-                            "Condition": "SEASON spring fall, SYNCED_RANDOM day location_weather 0.183",
-                            "Weather": "Rain"
-                        },
-                        {
-                            "Condition": null,
-                            "Weather": "Wind"
-                        }
-                    ],
-                    "MaxPassOutCost": 0,
-                    "PassOutLocations": [{
-                        "Condition": "!DAY_OF_WEEK Friday Saturday Sunday",
-                        "Location": "{{ModId}}_House",
-                        "Position": {
-                            "X": 11,
-                            "Y": 15
-                        }
-                    }],
-                    "ReviveLocations": [{
-                        "Location": "{{ModId}}_House",
-                        "Position": {
-                            "X": 9,
-                            "Y": 32
-                        }
-                    }]
                 }
             }
         },
